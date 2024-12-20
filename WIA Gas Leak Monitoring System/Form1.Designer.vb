@@ -2200,6 +2200,7 @@ Partial Class Form1
         '
         'StartTimer
         '
+        Me.StartTimer.Interval = 1000
         '
         'Guna2ContextMenuStrip1
         '

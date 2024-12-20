@@ -2,21 +2,18 @@
 Imports System.Net
 Imports System.Net.Sockets
 Imports System.Threading
-Public Class Form1
+Imports HslCommunication.Profinet.Omron
+Imports HslCommunication
 
-    Inherits System.Windows.Forms.Form
-    Dim SID, RSV, GCT, ICF As String
-    Dim NIC_Count As Integer
-    Dim Receiving_Done As Boolean
+Public Class Form1
+    Public omronPLC As OmronFinsNet
 
     Private Sub StartTimer_Tick(sender As Object, e As EventArgs) Handles StartTimer.Tick
-        Combo1 = "0101820000000005"
-        SendData()
-        If Receiving_Done = True Then
-
-            GetData()
-
-        End If
+        Read_D01()
+        Read_D02()
+        Read_D03()
+        Read_D04()
+        Read_D05()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -33,28 +30,12 @@ Public Class Form1
             Bounds = Screen.PrimaryScreen.WorkingArea
         End If
 
-        RemoteIPAddress = "192.168.250.4"
-
-        ICF = "80"
-        GCT = "03"
-        RSV = "00"
-        SID = "00"
-        SNA1 = "00"
-        SA11 = "64"
-        SA21 = "00"
-        DNA1 = "00"
-        DA11 = "00"
-        DA21 = "00"
-
-        cboLocalIP = "192.168.250.20"
+        Connect_toPLC()
 
         TimerDT.Enabled = True
-
         StartTimer.Enabled = True
 
         lblGLStatus.Text = "Normal"
-
-
 
         'txtGT01.Text = "2.12 %"
         'txtGT01.ForeColor = Color.White
