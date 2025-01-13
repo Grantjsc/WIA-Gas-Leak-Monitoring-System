@@ -556,13 +556,13 @@ Module Read_OMRON_PLC_Module
 
                 ShowSenVal_Form.txtSelas_Up.ForeColor = Color.Lime
                 ShowSenVal_Form.txtSelas_Up.BackColor = Color.Black
-                ShowSenVal_Form.picSelas_Up_Alarm.Enabled = False
+                ShowSenVal_Form.picSelas_Up_Alarm.Visible = False
 
             Else
 
                 ShowSenVal_Form.txtSelas_Up.ForeColor = Color.White
                 ShowSenVal_Form.txtSelas_Up.BackColor = Color.Red
-                ShowSenVal_Form.picSelas_Up_Alarm.Enabled = True
+                ShowSenVal_Form.picSelas_Up_Alarm.Visible = True
 
             End If
         End If
@@ -578,13 +578,13 @@ Module Read_OMRON_PLC_Module
 
                 ShowSenVal_Form.txtSelas_Mid.ForeColor = Color.Lime
                 ShowSenVal_Form.txtSelas_Mid.BackColor = Color.Black
-                ShowSenVal_Form.picSelas_Mid_Alarm.Enabled = False
+                ShowSenVal_Form.picSelas_Mid_Alarm.Visible = False
 
             Else
 
                 ShowSenVal_Form.txtSelas_Mid.ForeColor = Color.White
                 ShowSenVal_Form.txtSelas_Mid.BackColor = Color.Red
-                ShowSenVal_Form.picSelas_Mid_Alarm.Enabled = True
+                ShowSenVal_Form.picSelas_Mid_Alarm.Visible = True
 
             End If
         End If
@@ -600,13 +600,13 @@ Module Read_OMRON_PLC_Module
 
                 ShowSenVal_Form.txtSelas_Low.ForeColor = Color.Lime
                 ShowSenVal_Form.txtSelas_Low.BackColor = Color.Black
-                ShowSenVal_Form.picSelas_Low_Alarm.Enabled = False
+                ShowSenVal_Form.picSelas_Low_Alarm.Visible = False
 
             Else
 
                 ShowSenVal_Form.txtSelas_Low.ForeColor = Color.White
                 ShowSenVal_Form.txtSelas_Low.BackColor = Color.Red
-                ShowSenVal_Form.picSelas_Low_Alarm.Enabled = True
+                ShowSenVal_Form.picSelas_Low_Alarm.Visible = True
 
             End If
         End If
