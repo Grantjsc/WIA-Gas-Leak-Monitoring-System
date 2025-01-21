@@ -403,7 +403,7 @@ Partial Class Sensors_Form
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(-4, 27)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(17, 27)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1175, 1700)
         Me.Guna2GroupBox1.TabIndex = 2

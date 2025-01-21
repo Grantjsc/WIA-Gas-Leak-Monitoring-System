@@ -21,6 +21,8 @@ Module Read_OMRON_PLC_Module
         If connectResult.IsSuccess Then
             Console.WriteLine("Connected to Omron NX102-9020 PLC successfully!")
             Design2_Form.Timer_ReadOmron.Enabled = True
+            Design2_Form.TimerSaveDb.Enabled = True
+
         Else
             'MsgBox("Failed to connect to PLC: " & connectResult.Message)
             MsgBox("Failed to connect to PLC: Please check IP Address", MsgBoxStyle.Information)
@@ -101,6 +103,7 @@ Module Read_OMRON_PLC_Module
             'MessageBox.Show("D100 Value: " & readResult.Content.ToString())
             'Math.Round(readResult.Content, 2) & " %"
             Sensors_Form.txtSelas01_Up.Text = readResult.Content & " %"
+            GT01_Val = CDec(readResult.Content)
         Else
             'MessageBox.Show("Failed to read data: " & readResult.Message)
             'Console.WriteLine("Failed to read data: " & readResult.Message)
@@ -111,6 +114,7 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D01")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas01_Mid.Text = readResult.Content & " %"
+            GT02_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -118,6 +122,7 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D02")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas01_Low.Text = readResult.Content & " %"
+            GT03_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -127,18 +132,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D03")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas02_Up.Text = readResult.Content & " %"
+            GT04_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D04()
         Dim readResult = Form1.omronPLC.ReadInt16("D04")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas02_Mid.Text = readResult.Content & " %"
+            GT05_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D05()
         Dim readResult = Form1.omronPLC.ReadInt16("D05")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas02_Low.Text = readResult.Content & " %"
+            GT06_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -147,18 +155,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D06")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas03_Up.Text = readResult.Content & " %"
+            GT07_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D07()
         Dim readResult = Form1.omronPLC.ReadInt16("D07")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas03_Mid.Text = readResult.Content & " %"
+            GT08_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D08()
         Dim readResult = Form1.omronPLC.ReadInt16("D08")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas03_Low.Text = readResult.Content & " %"
+            GT09_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -168,18 +179,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D09")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas04_Up.Text = readResult.Content & " %"
+            GT10_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D10()
         Dim readResult = Form1.omronPLC.ReadInt16("D10")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas04_Mid.Text = readResult.Content & " %"
+            GT11_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D11()
         Dim readResult = Form1.omronPLC.ReadInt16("D11")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas04_Low.Text = readResult.Content & " %"
+            GT12_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -189,18 +203,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D12")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas05_Up.Text = readResult.Content & " %"
+            GT13_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D13()
         Dim readResult = Form1.omronPLC.ReadInt16("D13")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas05_Mid.Text = readResult.Content & " %"
+            GT14_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D14()
         Dim readResult = Form1.omronPLC.ReadInt16("D14")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas05_Low.Text = readResult.Content & " %"
+            GT15_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -210,18 +227,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D15")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas06_Up.Text = readResult.Content & " %"
+            GT16_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D16()
         Dim readResult = Form1.omronPLC.ReadInt16("D16")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas06_Mid.Text = readResult.Content & " %"
+            GT17_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D17()
         Dim readResult = Form1.omronPLC.ReadInt16("D17")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas06_Low.Text = readResult.Content & " %"
+            GT18_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -231,18 +251,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D18")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas07_Up.Text = readResult.Content & " %"
+            GT19_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D19()
         Dim readResult = Form1.omronPLC.ReadInt16("D19")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas07_Mid.Text = readResult.Content & " %"
+            GT20_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D20()
         Dim readResult = Form1.omronPLC.ReadInt16("D20")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas07_Low.Text = readResult.Content & " %"
+            GT21_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -253,18 +276,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D21")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas08_Up.Text = readResult.Content & " %"
+            GT22_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D22()
         Dim readResult = Form1.omronPLC.ReadInt16("D22")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas08_Mid.Text = readResult.Content & " %"
+            GT23_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D23()
         Dim readResult = Form1.omronPLC.ReadInt16("D23")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas08_Low.Text = readResult.Content & " %"
+            GT24_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -274,18 +300,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D24")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas09_Up.Text = readResult.Content & " %"
+            GT25_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D25()
         Dim readResult = Form1.omronPLC.ReadInt16("D25")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas09_Mid.Text = readResult.Content & " %"
+            GT26_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D26()
         Dim readResult = Form1.omronPLC.ReadInt16("D26")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas09_Low.Text = readResult.Content & " %"
+            GT27_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -295,18 +324,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D27")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas10_Up.Text = readResult.Content & " %"
+            GT28_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D28()
         Dim readResult = Form1.omronPLC.ReadInt16("D28")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas10_Mid.Text = readResult.Content & " %"
+            GT29_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D29()
         Dim readResult = Form1.omronPLC.ReadInt16("D29")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas10_Low.Text = readResult.Content & " %"
+            GT30_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -316,18 +348,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D30")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas11_Up.Text = readResult.Content & " %"
+            GT31_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D31()
         Dim readResult = Form1.omronPLC.ReadInt16("D31")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas11_Mid.Text = readResult.Content & " %"
+            GT32_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D32()
         Dim readResult = Form1.omronPLC.ReadInt16("D32")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas11_Low.Text = readResult.Content & " %"
+            GT33_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -337,18 +372,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D33")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas12_Up.Text = readResult.Content & " %"
+            GT34_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D34()
         Dim readResult = Form1.omronPLC.ReadInt16("D34")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas12_Mid.Text = readResult.Content & " %"
+            GT35_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D35()
         Dim readResult = Form1.omronPLC.ReadInt16("D35")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas12_Low.Text = readResult.Content & " %"
+            GT36_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -358,18 +396,21 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D36")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas13_Up.Text = readResult.Content & " %"
+            GT37_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D37()
         Dim readResult = Form1.omronPLC.ReadInt16("D37")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas13_Mid.Text = readResult.Content & " %"
+            GT38_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D38()
         Dim readResult = Form1.omronPLC.ReadInt16("D38")
         If readResult.IsSuccess Then
             Sensors_Form.txtSelas13_Low.Text = readResult.Content & " %"
+            GT39_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -378,12 +419,14 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D39")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_01.Text = readResult.Content & " %"
+            GT40_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D40()
         Dim readResult = Form1.omronPLC.ReadInt16("D40")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_02.Text = readResult.Content & " %"
+            GT41_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -392,48 +435,56 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D41")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_03.Text = readResult.Content & " %"
+            GT42_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D42()
         Dim readResult = Form1.omronPLC.ReadInt16("D42")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_04.Text = readResult.Content & " %"
+            GT43_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D43()
         Dim readResult = Form1.omronPLC.ReadInt16("D43")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_05.Text = readResult.Content & " %"
+            GT44_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D44()
         Dim readResult = Form1.omronPLC.ReadInt16("D44")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_06.Text = readResult.Content & " %"
+            GT45_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D45()
         Dim readResult = Form1.omronPLC.ReadInt16("D45")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_07.Text = readResult.Content & " %"
+            GT46_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D46()
         Dim readResult = Form1.omronPLC.ReadInt16("D46")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_08.Text = readResult.Content & " %"
+            GT47_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D47()
         Dim readResult = Form1.omronPLC.ReadInt16("D47")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_09.Text = readResult.Content & " %"
+            GT48_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D48()
         Dim readResult = Form1.omronPLC.ReadInt16("D48")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_10.Text = readResult.Content & " %"
+            GT49_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -442,60 +493,70 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D49")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_11.Text = readResult.Content & " %"
+            GT50_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D50()
         Dim readResult = Form1.omronPLC.ReadInt16("D50")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_12.Text = readResult.Content & " %"
+            GT51_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D51()
         Dim readResult = Form1.omronPLC.ReadInt16("D51")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_13.Text = readResult.Content & " %"
+            GT52_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D52()
         Dim readResult = Form1.omronPLC.ReadInt16("D52")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_14.Text = readResult.Content & " %"
+            GT53_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D53()
         Dim readResult = Form1.omronPLC.ReadInt16("D53")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_15.Text = readResult.Content & " %"
+            GT54_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D54()
         Dim readResult = Form1.omronPLC.ReadInt16("D54")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_16.Text = readResult.Content & " %"
+            GT55_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D55()
         Dim readResult = Form1.omronPLC.ReadInt16("D55")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_17.Text = readResult.Content & " %"
+            GT56_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D56()
         Dim readResult = Form1.omronPLC.ReadInt16("D56")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_18.Text = readResult.Content & " %"
+            GT57_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D57()
         Dim readResult = Form1.omronPLC.ReadInt16("D57")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_19.Text = readResult.Content & " %"
+            GT58_Val = CDec(readResult.Content)
         End If
     End Sub
     Sub Read_D58()
         Dim readResult = Form1.omronPLC.ReadInt16("D58")
         If readResult.IsSuccess Then
             Sensors_Form.txtTS_20.Text = readResult.Content & " %"
+            GT59_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -504,6 +565,7 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D59")
         If readResult.IsSuccess Then
             Sensors_Form.txtGM1.Text = readResult.Content & " %"
+            GT60_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -511,6 +573,7 @@ Module Read_OMRON_PLC_Module
         Dim readResult = Form1.omronPLC.ReadInt16("D60")
         If readResult.IsSuccess Then
             Sensors_Form.txtGM4.Text = readResult.Content & " %"
+            GT61_Val = CDec(readResult.Content)
         End If
     End Sub
 
@@ -590,7 +653,7 @@ Module Read_OMRON_PLC_Module
         End If
     End Sub
     Sub Read_Val3_Alarm()
-        Dim readResult = Form1.omronPLC.ReadBool(Alarm_Reading1)
+        Dim readResult = Form1.omronPLC.ReadBool(Alarm_Reading3)
         Dim alarm_val As String
         If readResult.IsSuccess Then
 
@@ -2552,56 +2615,6 @@ Module Read_Alarm_Module
 
 End Module
 
-Module Query_Module
-    Public connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LF Database\WIA Gas Leak Monitoring.accdb;Persist Security Info=True;Jet OLEDB:Database Password=lfwiagasleak"
-    Public Dbconnection As New OleDbConnection(connString)
-    Public Biometric_Name As String
-
-    Sub ConOpen()
-        If Dbconnection.State = ConnectionState.Closed Then
-            Dbconnection.Open()
-        End If
-    End Sub
-
-    Sub ConClose()
-        If Dbconnection.State = ConnectionState.Open Then
-            Dbconnection.Close()
-        End If
-    End Sub
-
-    Sub Get_Details()
-        Try
-            Dim MyData As String
-            Dim cmd As New OleDbCommand
-            Dim Data As New DataTable
-            Dim adap As New OleDbDataAdapter
-            ConOpen()
-
-            MyData = "SELECT * FROM Details_tb WHERE ID = 1 "
-            cmd.Connection = Dbconnection
-            cmd.CommandText = MyData
-            adap.SelectCommand = cmd
-
-            adap.Fill(Data)
-
-            'Clear_Datas()
-
-            If Data.Rows.Count > 0 Then
-
-                Receiver = Data.Rows(0).Item("Receiver_Number").ToString
-                Mess = Data.Rows(0).Item("Message").ToString
-
-            Else
-                MsgBox("No details found in the database!", MessageBoxIcon.Error)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message, vbCritical)
-        Finally
-            ConClose()
-        End Try
-    End Sub
-End Module
-
 Module AppConfig_Module
     Public config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
 
@@ -2793,6 +2806,7 @@ Module SMS_Module
         End Try
 
     End Sub
+
 End Module
 
 Module Email_Module

@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("WIA_Gas_Leak_MonitoringConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=BTMESSQLDEV03;Initial Catalog=LFPHPICO;Persist Security Info=True;Use"& _ 
+            "r ID=mesph;Password=PHFuse;TrustServerCertificate=True")>  _
+        Public ReadOnly Property SQL_Connection() As String
+            Get
+                Return CType(Me("SQL_Connection"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

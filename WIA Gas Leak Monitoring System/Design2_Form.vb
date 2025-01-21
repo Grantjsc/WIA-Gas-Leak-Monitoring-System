@@ -23,7 +23,7 @@
 
         TimerDT.Enabled = True
 
-        'Timer_ReadOmron.Enabled = True
+        'Timer_ReadOmron.Enabled = True 'Moved to the Code file Module Read_OMRON_PLC_Module (Sub Connect_toPLC())
 
     End Sub
 
@@ -59,5 +59,9 @@
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         Reset_Btn()
+    End Sub
+
+    Private Sub TimerSaveDb_Tick(sender As Object, e As EventArgs) Handles TimerSaveDb.Tick
+        Update_GT_ValDb()
     End Sub
 End Class

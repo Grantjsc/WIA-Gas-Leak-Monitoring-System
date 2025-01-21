@@ -25,6 +25,7 @@ Partial Class Design2_Form
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Design2_Form))
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnReset = New System.Windows.Forms.Button()
         Me.btnEmail_Test = New System.Windows.Forms.Button()
         Me.btnSMS_Test = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,7 +42,7 @@ Partial Class Design2_Form
         Me.AddAssociateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer_ReadOmron = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.btnReset = New System.Windows.Forms.Button()
+        Me.TimerSaveDb = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
@@ -62,6 +63,17 @@ Partial Class Design2_Form
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1200, 72)
         Me.Panel3.TabIndex = 129
+        '
+        'btnReset
+        '
+        Me.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnReset.Location = New System.Drawing.Point(844, 26)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.TabIndex = 131
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
+        Me.btnReset.Visible = False
         '
         'btnEmail_Test
         '
@@ -210,16 +222,9 @@ Partial Class Design2_Form
         '
         Me.Timer_ReadOmron.Interval = 1000
         '
-        'btnReset
+        'TimerSaveDb
         '
-        Me.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnReset.Location = New System.Drawing.Point(844, 26)
-        Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(75, 23)
-        Me.btnReset.TabIndex = 131
-        Me.btnReset.Text = "Reset"
-        Me.btnReset.UseVisualStyleBackColor = True
-        Me.btnReset.Visible = False
+        Me.TimerSaveDb.Interval = 5000
         '
         'Design2_Form
         '
@@ -262,4 +267,5 @@ Partial Class Design2_Form
     Friend WithEvents AddAssociateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnEmail_Test As Button
     Friend WithEvents btnReset As Button
+    Friend WithEvents TimerSaveDb As Timer
 End Class
