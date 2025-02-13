@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>WIA Gas Leak Monitoring System</ProductName>
     <PublisherName>Littelfuse Philippines %28TSG%29 - GCatapang</PublisherName>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -35,7 +35,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -212,6 +212,12 @@
     <Compile Include="PassChanges_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RecipientDelay_Form.Designer.vb">
+      <DependentUpon>RecipientDelay_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecipientDelay_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sensors_Form.Designer.vb">
       <DependentUpon>Sensors_Form.vb</DependentUpon>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PassChanges_Form.resx">
       <DependentUpon>PassChanges_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecipientDelay_Form.resx">
+      <DependentUpon>RecipientDelay_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sensors_Form.resx">
       <DependentUpon>Sensors_Form.vb</DependentUpon>

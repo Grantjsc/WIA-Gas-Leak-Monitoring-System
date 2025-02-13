@@ -25,9 +25,9 @@ Partial Class Design2_Form
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Design2_Form))
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnSMS_Test = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnEmail_Test = New System.Windows.Forms.Button()
-        Me.btnSMS_Test = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -40,9 +40,12 @@ Partial Class Design2_Form
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangeIPAddressCOMNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddAssociateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditMessageReceipientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MessageRecipientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer_ReadOmron = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.TimerSaveDb = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerMessages = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
@@ -53,9 +56,9 @@ Partial Class Design2_Form
         '
         Me.Panel3.BackColor = System.Drawing.Color.SeaGreen
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.btnSMS_Test)
         Me.Panel3.Controls.Add(Me.btnReset)
         Me.Panel3.Controls.Add(Me.btnEmail_Test)
-        Me.Panel3.Controls.Add(Me.btnSMS_Test)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
@@ -63,6 +66,16 @@ Partial Class Design2_Form
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1200, 72)
         Me.Panel3.TabIndex = 129
+        '
+        'btnSMS_Test
+        '
+        Me.btnSMS_Test.Location = New System.Drawing.Point(226, 36)
+        Me.btnSMS_Test.Name = "btnSMS_Test"
+        Me.btnSMS_Test.Size = New System.Drawing.Size(75, 23)
+        Me.btnSMS_Test.TabIndex = 129
+        Me.btnSMS_Test.Text = "SMS Test"
+        Me.btnSMS_Test.UseVisualStyleBackColor = True
+        Me.btnSMS_Test.Visible = False
         '
         'btnReset
         '
@@ -84,16 +97,6 @@ Partial Class Design2_Form
         Me.btnEmail_Test.Text = "Email Test"
         Me.btnEmail_Test.UseVisualStyleBackColor = True
         Me.btnEmail_Test.Visible = False
-        '
-        'btnSMS_Test
-        '
-        Me.btnSMS_Test.Location = New System.Drawing.Point(226, 36)
-        Me.btnSMS_Test.Name = "btnSMS_Test"
-        Me.btnSMS_Test.Size = New System.Drawing.Size(75, 23)
-        Me.btnSMS_Test.TabIndex = 129
-        Me.btnSMS_Test.Text = "SMS Test"
-        Me.btnSMS_Test.UseVisualStyleBackColor = True
-        Me.btnSMS_Test.Visible = False
         '
         'Label1
         '
@@ -187,7 +190,7 @@ Partial Class Design2_Form
         '
         'Guna2ContextMenuStrip1
         '
-        Me.Guna2ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ChangeIPAddressCOMNameToolStripMenuItem, Me.AddAssociateToolStripMenuItem})
+        Me.Guna2ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ChangeIPAddressCOMNameToolStripMenuItem, Me.AddAssociateToolStripMenuItem, Me.EditMessageReceipientToolStripMenuItem})
         Me.Guna2ContextMenuStrip1.Name = "Guna2ContextMenuStrip1"
         Me.Guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro
@@ -198,25 +201,39 @@ Partial Class Design2_Form
         Me.Guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White
         Me.Guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro
         Me.Guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.Guna2ContextMenuStrip1.Size = New System.Drawing.Size(240, 70)
+        Me.Guna2ContextMenuStrip1.Size = New System.Drawing.Size(233, 92)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ChangeIPAddressCOMNameToolStripMenuItem
         '
         Me.ChangeIPAddressCOMNameToolStripMenuItem.Name = "ChangeIPAddressCOMNameToolStripMenuItem"
-        Me.ChangeIPAddressCOMNameToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.ChangeIPAddressCOMNameToolStripMenuItem.ShowShortcutKeys = False
+        Me.ChangeIPAddressCOMNameToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
         Me.ChangeIPAddressCOMNameToolStripMenuItem.Text = "Change IP Address/COM name"
         '
         'AddAssociateToolStripMenuItem
         '
         Me.AddAssociateToolStripMenuItem.Name = "AddAssociateToolStripMenuItem"
-        Me.AddAssociateToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+        Me.AddAssociateToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
         Me.AddAssociateToolStripMenuItem.Text = "Add Associate"
+        '
+        'EditMessageReceipientToolStripMenuItem
+        '
+        Me.EditMessageReceipientToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MessageRecipientToolStripMenuItem})
+        Me.EditMessageReceipientToolStripMenuItem.Name = "EditMessageReceipientToolStripMenuItem"
+        Me.EditMessageReceipientToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.EditMessageReceipientToolStripMenuItem.Text = "Edit"
+        '
+        'MessageRecipientToolStripMenuItem
+        '
+        Me.MessageRecipientToolStripMenuItem.Name = "MessageRecipientToolStripMenuItem"
+        Me.MessageRecipientToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.MessageRecipientToolStripMenuItem.Text = " Message Recipient/Delay"
         '
         'Timer_ReadOmron
         '
@@ -224,7 +241,11 @@ Partial Class Design2_Form
         '
         'TimerSaveDb
         '
-        Me.TimerSaveDb.Interval = 5000
+        Me.TimerSaveDb.Interval = 30000
+        '
+        'TimerMessages
+        '
+        Me.TimerMessages.Interval = 1000
         '
         'Design2_Form
         '
@@ -268,4 +289,7 @@ Partial Class Design2_Form
     Friend WithEvents btnEmail_Test As Button
     Friend WithEvents btnReset As Button
     Friend WithEvents TimerSaveDb As Timer
+    Friend WithEvents TimerMessages As Timer
+    Friend WithEvents EditMessageReceipientToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MessageRecipientToolStripMenuItem As ToolStripMenuItem
 End Class

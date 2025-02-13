@@ -86,37 +86,37 @@ Module Query_Module
         End If
     End Sub
 
-    Sub Get_Details()
-        Try
-            Dim MyData As String
-            Dim cmd As New SqlCommand
-            Dim Data As New DataTable
-            Dim adap As New SqlDataAdapter
-            ConOpen()
+    'Sub Get_Details()
+    '    Try
+    '        Dim MyData As String
+    '        Dim cmd As New SqlCommand
+    '        Dim Data As New DataTable
+    '        Dim adap As New SqlDataAdapter
+    '        ConOpen()
 
-            MyData = "SELECT * FROM Details_tb WHERE ID = 1 "
-            cmd.Connection = Dbconnection
-            cmd.CommandText = MyData
-            adap.SelectCommand = cmd
+    '        MyData = "SELECT * FROM Details_tb WHERE ID = 1 "
+    '        cmd.Connection = Dbconnection
+    '        cmd.CommandText = MyData
+    '        adap.SelectCommand = cmd
 
-            adap.Fill(Data)
+    '        adap.Fill(Data)
 
-            'Clear_Datas()
+    '        'Clear_Datas()
 
-            If Data.Rows.Count > 0 Then
+    '        If Data.Rows.Count > 0 Then
 
-                Receiver = Data.Rows(0).Item("Receiver_Number").ToString
-                Mess = Data.Rows(0).Item("Message").ToString
+    '            Receiver = Data.Rows(0).Item("Receiver_Number").ToString
+    '            Mess = Data.Rows(0).Item("Message").ToString
 
-            Else
-                MsgBox("No details found in the database!", MessageBoxIcon.Error)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message, vbCritical)
-        Finally
-            ConClose()
-        End Try
-    End Sub
+    '        Else
+    '            MsgBox("No details found in the database!", MessageBoxIcon.Error)
+    '        End If
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, vbCritical)
+    '    Finally
+    '        ConClose()
+    '    End Try
+    'End Sub
 
     Sub Update_GT_ValDb()
         Try
@@ -208,7 +208,9 @@ Module Query_Module
             End Using
 
         Catch ex As Exception
+            Design2_Form.TimerSaveDb.Enabled = False
             MsgBox(ex.Message, vbCritical)
+            Application.ExitThread()
         End Try
     End Sub
 End Module

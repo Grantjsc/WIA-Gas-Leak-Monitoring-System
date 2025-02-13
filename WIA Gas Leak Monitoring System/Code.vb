@@ -4,6 +4,7 @@ Imports System.IO.Ports
 Imports System.Net.Mail
 Imports System.Threading
 Imports System.Web
+Imports System.Web.Hosting
 Imports System.Xml
 Imports HslCommunication.Profinet.Omron
 Imports TextmagicRest
@@ -430,7 +431,7 @@ Module Read_OMRON_PLC_Module
         End If
     End Sub
 
-    'PICO TO SQUARE NANO TRENCH SENSOR VALUE
+    'PICO TO NANO TRENCH SENSOR VALUE
     Sub Read_D41()
         Dim readResult = Form1.omronPLC.ReadInt16("D41")
         If readResult.IsSuccess Then
@@ -683,6 +684,148 @@ End Module
 
 Module Read_Alarm_Module
 
+    Public GasLeak_Loc As New List(Of String)()
+
+    Public GT01_Location As String = "- Selas 01: Upper"
+    Public GT02_Location As String = "- Selas 01: Middle"
+    Public GT03_Location As String = "- Selas 01: Lower"
+
+    Public GT04_Location As String = "- Selas 02: Upper"
+    Public GT05_Location As String = "- Selas 02: Middle"
+    Public GT06_Location As String = "- Selas 02: Lower"
+
+    Public GT07_Location As String = "- Selas 03: Upper"
+    Public GT08_Location As String = "- Selas 03: Middle"
+    Public GT09_Location As String = "- Selas 03: Lower"
+
+    Public GT10_Location As String = "- Selas 04: Upper"
+    Public GT11_Location As String = "- Selas 04: Middle"
+    Public GT12_Location As String = "- Selas 04: Lower"
+
+    Public GT13_Location As String = "- Selas 05: Upper"
+    Public GT14_Location As String = "- Selas 05: Middle"
+    Public GT15_Location As String = "- Selas 05: Lower"
+
+    Public GT16_Location As String = "- Selas 06: Upper"
+    Public GT17_Location As String = "- Selas 06: Middle"
+    Public GT18_Location As String = "- Selas 06: Lower"
+
+    Public GT19_Location As String = "- Selas 07: Upper"
+    Public GT20_Location As String = "- Selas 07: Middle"
+    Public GT21_Location As String = "- Selas 07: Lower"
+
+    Public GT22_Location As String = "- Selas 08: Upper"
+    Public GT23_Location As String = "- Selas 08: Middle"
+    Public GT24_Location As String = "- Selas 08: Lower"
+
+    Public GT25_Location As String = "- Selas 09: Upper"
+    Public GT26_Location As String = "- Selas 09: Middle"
+    Public GT27_Location As String = "- Selas 09: Lower"
+
+    Public GT28_Location As String = "- Selas 10: Upper"
+    Public GT29_Location As String = "- Selas 10: Middle"
+    Public GT30_Location As String = "- Selas 10: Lower"
+
+    Public GT31_Location As String = "- Selas 11: Upper"
+    Public GT32_Location As String = "- Selas 11: Middle"
+    Public GT33_Location As String = "- Selas 11: Lower"
+
+    Public GT34_Location As String = "- Selas 12: Upper"
+    Public GT35_Location As String = "- Selas 12: Middle"
+    Public GT36_Location As String = "- Selas 12: Lower"
+
+    Public GT37_Location As String = "- Selas 13: Upper"
+    Public GT38_Location As String = "- Selas 13: Middle"
+    Public GT39_Location As String = "- Selas 13: Lower"
+
+    Public GT40_Location As String = "- Warehouse: Trench 01"
+    Public GT41_Location As String = "- Warehouse: Trench 02"
+
+    Public GT42_Location As String = "- PICO to NANO: Trench 03"
+    Public GT43_Location As String = "- PICO to NANO: Trench 04"
+    Public GT44_Location As String = "- PICO to NANO: Trench 05"
+    Public GT45_Location As String = "- PICO to NANO: Trench 06"
+    Public GT46_Location As String = "- PICO to NANO: Trench 07"
+    Public GT47_Location As String = "- PICO to NANO: Trench 08"
+    Public GT48_Location As String = "- PICO to NANO: Trench 09"
+    Public GT49_Location As String = "- PICO to NANO: Trench 10"
+
+    Public GT50_Location As String = "- PICO: Trench 11"
+    Public GT51_Location As String = "- PICO: Trench 12"
+    Public GT52_Location As String = "- PICO: Trench 13"
+    Public GT53_Location As String = "- PICO: Trench 14"
+    Public GT54_Location As String = "- PICO: Trench 15"
+    Public GT55_Location As String = "- PICO: Trench 16"
+    Public GT56_Location As String = "- PICO: Trench 17"
+    Public GT57_Location As String = "- PICO: Trench 18"
+    Public GT58_Location As String = "- PICO: Trench 19"
+    Public GT59_Location As String = "- PICO: Trench 20"
+
+    Public GT60_Location As String = "- Gas Mixing: 1"
+    Public GT61_Location As String = "- Gas Mixing: 4"
+
+    Public GT01_Alarm As Boolean = False
+    Public GT02_Alarm As Boolean = False
+    Public GT03_Alarm As Boolean = False
+    Public GT04_Alarm As Boolean = False
+    Public GT05_Alarm As Boolean = False
+    Public GT06_Alarm As Boolean = False
+    Public GT07_Alarm As Boolean = False
+    Public GT08_Alarm As Boolean = False
+    Public GT09_Alarm As Boolean = False
+    Public GT10_Alarm As Boolean = False
+    Public GT11_Alarm As Boolean = False
+    Public GT12_Alarm As Boolean = False
+    Public GT13_Alarm As Boolean = False
+    Public GT14_Alarm As Boolean = False
+    Public GT15_Alarm As Boolean = False
+    Public GT16_Alarm As Boolean = False
+    Public GT17_Alarm As Boolean = False
+    Public GT18_Alarm As Boolean = False
+    Public GT19_Alarm As Boolean = False
+    Public GT20_Alarm As Boolean = False
+    Public GT21_Alarm As Boolean = False
+    Public GT22_Alarm As Boolean = False
+    Public GT23_Alarm As Boolean = False
+    Public GT24_Alarm As Boolean = False
+    Public GT25_Alarm As Boolean = False
+    Public GT26_Alarm As Boolean = False
+    Public GT27_Alarm As Boolean = False
+    Public GT28_Alarm As Boolean = False
+    Public GT29_Alarm As Boolean = False
+    Public GT30_Alarm As Boolean = False
+    Public GT31_Alarm As Boolean = False
+    Public GT32_Alarm As Boolean = False
+    Public GT33_Alarm As Boolean = False
+    Public GT34_Alarm As Boolean = False
+    Public GT35_Alarm As Boolean = False
+    Public GT36_Alarm As Boolean = False
+    Public GT37_Alarm As Boolean = False
+    Public GT38_Alarm As Boolean = False
+    Public GT39_Alarm As Boolean = False
+    Public GT40_Alarm As Boolean = False
+    Public GT41_Alarm As Boolean = False
+    Public GT42_Alarm As Boolean = False
+    Public GT43_Alarm As Boolean = False
+    Public GT44_Alarm As Boolean = False
+    Public GT45_Alarm As Boolean = False
+    Public GT46_Alarm As Boolean = False
+    Public GT47_Alarm As Boolean = False
+    Public GT48_Alarm As Boolean = False
+    Public GT49_Alarm As Boolean = False
+    Public GT50_Alarm As Boolean = False
+    Public GT51_Alarm As Boolean = False
+    Public GT52_Alarm As Boolean = False
+    Public GT53_Alarm As Boolean = False
+    Public GT54_Alarm As Boolean = False
+    Public GT55_Alarm As Boolean = False
+    Public GT56_Alarm As Boolean = False
+    Public GT57_Alarm As Boolean = False
+    Public GT58_Alarm As Boolean = False
+    Public GT59_Alarm As Boolean = False
+    Public GT60_Alarm As Boolean = False
+    Public GT61_Alarm As Boolean = False
+
     Sub Read_OmronPLC_Alarm()
         D00_Alarm()
         D01_Alarm()
@@ -765,6 +908,8 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas01_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas01_Up.BackColor = Color.Black
                 Sensors_Form.picSelas01_Up_Alarm.Visible = False
+
+                GT01_Alarm = False
             Else
 
                 WIA_Layout_Form.btnSelas01.FillColor = Color.Red
@@ -775,6 +920,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas01_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas01_Up.BackColor = Color.Red
                 Sensors_Form.picSelas01_Up_Alarm.Visible = True
+
+                GT01_Alarm = True
+
+                If GT01_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT01_Location) Then
+                        GasLeak_Loc.Add(GT01_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -795,6 +954,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas01_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas01_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas01_Mid_Alarm.Visible = False
+
+                GT02_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas01.FillColor = Color.Red
@@ -805,6 +967,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas01_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas01_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas01_Mid_Alarm.Visible = True
+
+                GT02_Alarm = True
+
+                If GT02_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT02_Location) Then
+                        GasLeak_Loc.Add(GT02_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -825,6 +1001,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas01_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas01_Low.BackColor = Color.Black
                 Sensors_Form.picSelas01_Low_Alarm.Visible = False
+
+                GT03_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas01.FillColor = Color.Red
@@ -835,6 +1014,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas01_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas01_Low.BackColor = Color.Red
                 Sensors_Form.picSelas01_Low_Alarm.Visible = True
+
+                GT03_Alarm = True
+
+                If GT03_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT03_Location) Then
+                        GasLeak_Loc.Add(GT03_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -857,6 +1050,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas02_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas02_Up.BackColor = Color.Black
                 Sensors_Form.picSelas02_Up_Alarm.Visible = False
+
+                GT04_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas02.FillColor = Color.Red
@@ -867,6 +1063,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas02_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas02_Up.BackColor = Color.Red
                 Sensors_Form.picSelas02_Up_Alarm.Visible = True
+
+                GT04_Alarm = True
+
+                If GT04_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT04_Location) Then
+                        GasLeak_Loc.Add(GT04_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -887,6 +1097,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas02_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas02_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas02_Mid_Alarm.Visible = False
+
+                GT05_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas02.FillColor = Color.Red
@@ -897,6 +1110,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas02_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas02_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas02_Mid_Alarm.Visible = True
+
+                GT05_Alarm = True
+
+                If GT05_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT05_Location) Then
+                        GasLeak_Loc.Add(GT05_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -917,6 +1144,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas02_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas02_Low.BackColor = Color.Black
                 Sensors_Form.picSelas02_Low_Alarm.Visible = False
+
+                GT06_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas02.FillColor = Color.Red
@@ -927,6 +1157,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas02_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas02_Low.BackColor = Color.Red
                 Sensors_Form.picSelas02_Low_Alarm.Visible = True
+
+                GT06_Alarm = True
+
+                If GT06_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT06_Location) Then
+                        GasLeak_Loc.Add(GT06_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -949,6 +1193,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas03_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas03_Up.BackColor = Color.Black
                 Sensors_Form.picSelas03_Up_Alarm.Visible = False
+
+                GT07_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas03.FillColor = Color.Red
@@ -959,6 +1206,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas03_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas03_Up.BackColor = Color.Red
                 Sensors_Form.picSelas03_Up_Alarm.Visible = True
+
+                GT07_Alarm = True
+
+                If GT07_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT07_Location) Then
+                        GasLeak_Loc.Add(GT07_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -979,6 +1240,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas03_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas03_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas03_Mid_Alarm.Visible = False
+
+                GT08_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas03.FillColor = Color.Red
@@ -989,6 +1253,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas03_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas03_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas03_Mid_Alarm.Visible = True
+
+                GT08_Alarm = True
+
+                If GT08_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT08_Location) Then
+                        GasLeak_Loc.Add(GT08_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1009,6 +1287,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas03_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas03_Low.BackColor = Color.Black
                 Sensors_Form.picSelas03_Low_Alarm.Visible = False
+
+                GT09_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas03.FillColor = Color.Red
@@ -1019,6 +1300,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas03_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas03_Low.BackColor = Color.Red
                 Sensors_Form.picSelas03_Low_Alarm.Visible = True
+
+                GT09_Alarm = True
+
+                If GT09_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT09_Location) Then
+                        GasLeak_Loc.Add(GT09_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1041,6 +1336,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas04_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas04_Up.BackColor = Color.Black
                 Sensors_Form.picSelas04_Up_Alarm.Visible = False
+
+                GT10_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas04.FillColor = Color.Red
@@ -1051,6 +1349,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas04_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas04_Up.BackColor = Color.Red
                 Sensors_Form.picSelas04_Up_Alarm.Visible = True
+
+                GT10_Alarm = True
+
+                If GT10_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT10_Location) Then
+                        GasLeak_Loc.Add(GT10_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1071,6 +1383,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas04_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas04_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas04_Mid_Alarm.Visible = False
+
+                GT11_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas04.FillColor = Color.Red
@@ -1081,6 +1396,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas04_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas04_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas04_Mid_Alarm.Visible = True
+
+                GT11_Alarm = True
+
+                If GT11_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT11_Location) Then
+                        GasLeak_Loc.Add(GT11_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1101,6 +1430,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas04_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas04_Low.BackColor = Color.Black
                 Sensors_Form.picSelas04_Low_Alarm.Visible = False
+
+                GT12_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas04.FillColor = Color.Red
@@ -1111,6 +1443,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas04_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas04_Low.BackColor = Color.Red
                 Sensors_Form.picSelas04_Low_Alarm.Visible = True
+
+                GT12_Alarm = True
+
+                If GT12_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT12_Location) Then
+                        GasLeak_Loc.Add(GT12_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1133,6 +1479,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas05_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas05_Up.BackColor = Color.Black
                 Sensors_Form.picSelas05_Up_Alarm.Visible = False
+
+                GT13_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas05.FillColor = Color.Red
@@ -1143,6 +1492,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas05_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas05_Up.BackColor = Color.Red
                 Sensors_Form.picSelas05_Up_Alarm.Visible = True
+
+                GT13_Alarm = True
+
+                If GT13_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT13_Location) Then
+                        GasLeak_Loc.Add(GT13_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1163,6 +1526,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas05_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas05_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas05_Mid_Alarm.Visible = False
+
+                GT14_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas05.FillColor = Color.Red
@@ -1173,6 +1539,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas05_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas05_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas05_Mid_Alarm.Visible = True
+
+                GT14_Alarm = True
+
+                If GT14_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT14_Location) Then
+                        GasLeak_Loc.Add(GT14_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1193,6 +1573,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas05_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas05_Low.BackColor = Color.Black
                 Sensors_Form.picSelas05_Low_Alarm.Visible = False
+
+                GT15_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas05.FillColor = Color.Red
@@ -1203,6 +1586,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas05_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas05_Low.BackColor = Color.Red
                 Sensors_Form.picSelas05_Low_Alarm.Visible = True
+
+                GT15_Alarm = True
+
+                If GT15_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT15_Location) Then
+                        GasLeak_Loc.Add(GT15_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1225,6 +1622,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas06_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas06_Up.BackColor = Color.Black
                 Sensors_Form.picSelas06_Up_Alarm.Visible = False
+
+                GT16_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas06.FillColor = Color.Red
@@ -1235,6 +1635,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas06_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas06_Up.BackColor = Color.Red
                 Sensors_Form.picSelas06_Up_Alarm.Visible = True
+
+                GT16_Alarm = True
+
+                If GT16_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT16_Location) Then
+                        GasLeak_Loc.Add(GT16_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1255,6 +1669,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas06_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas06_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas06_Mid_Alarm.Visible = False
+
+                GT17_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas06.FillColor = Color.Red
@@ -1265,6 +1682,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas06_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas06_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas06_Mid_Alarm.Visible = True
+
+                GT17_Alarm = True
+
+                If GT17_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT17_Location) Then
+                        GasLeak_Loc.Add(GT17_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1285,6 +1716,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas06_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas06_Low.BackColor = Color.Black
                 Sensors_Form.picSelas06_Low_Alarm.Visible = False
+
+                GT18_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas06.FillColor = Color.Red
@@ -1295,6 +1729,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas06_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas06_Low.BackColor = Color.Red
                 Sensors_Form.picSelas06_Low_Alarm.Visible = True
+
+                GT18_Alarm = True
+
+                If GT18_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT18_Location) Then
+                        GasLeak_Loc.Add(GT18_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1317,6 +1765,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas07_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas07_Up.BackColor = Color.Black
                 Sensors_Form.picSelas07_Up_Alarm.Visible = False
+
+                GT19_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas07.FillColor = Color.Red
@@ -1327,6 +1778,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas07_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas07_Up.BackColor = Color.Red
                 Sensors_Form.picSelas07_Up_Alarm.Visible = True
+
+                GT19_Alarm = True
+
+                If GT19_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT19_Location) Then
+                        GasLeak_Loc.Add(GT19_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1347,6 +1812,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas07_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas07_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas07_Mid_Alarm.Visible = False
+
+                GT20_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas07.FillColor = Color.Red
@@ -1357,6 +1825,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas07_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas07_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas07_Mid_Alarm.Visible = True
+
+                GT20_Alarm = True
+
+                If GT20_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT20_Location) Then
+                        GasLeak_Loc.Add(GT20_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1377,6 +1859,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas07_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas07_Low.BackColor = Color.Black
                 Sensors_Form.picSelas07_Low_Alarm.Visible = False
+
+                GT21_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas07.FillColor = Color.Red
@@ -1387,6 +1872,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas07_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas07_Low.BackColor = Color.Red
                 Sensors_Form.picSelas07_Low_Alarm.Visible = True
+
+                GT21_Alarm = True
+
+                If GT21_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT21_Location) Then
+                        GasLeak_Loc.Add(GT21_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1409,6 +1908,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas08_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas08_Up.BackColor = Color.Black
                 Sensors_Form.picSelas08_Up_Alarm.Visible = False
+
+                GT22_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas08.FillColor = Color.Red
@@ -1419,6 +1921,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas08_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas08_Up.BackColor = Color.Red
                 Sensors_Form.picSelas08_Up_Alarm.Visible = True
+
+                GT22_Alarm = True
+
+                If GT22_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT22_Location) Then
+                        GasLeak_Loc.Add(GT22_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1439,6 +1955,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas08_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas08_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas08_Mid_Alarm.Visible = False
+
+                GT23_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas08.FillColor = Color.Red
@@ -1449,6 +1968,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas08_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas08_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas08_Mid_Alarm.Visible = True
+
+                GT23_Alarm = True
+
+                If GT23_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT23_Location) Then
+                        GasLeak_Loc.Add(GT23_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1469,6 +2002,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas08_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas08_Low.BackColor = Color.Black
                 Sensors_Form.picSelas08_Low_Alarm.Visible = False
+
+                GT24_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas08.FillColor = Color.Red
@@ -1479,6 +2015,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas08_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas08_Low.BackColor = Color.Red
                 Sensors_Form.picSelas08_Low_Alarm.Visible = True
+
+                GT24_Alarm = True
+
+                If GT24_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT24_Location) Then
+                        GasLeak_Loc.Add(GT24_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1501,6 +2051,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas09_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas09_Up.BackColor = Color.Black
                 Sensors_Form.picSelas09_Up_Alarm.Visible = False
+
+                GT25_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas09.FillColor = Color.Red
@@ -1511,6 +2064,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas09_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas09_Up.BackColor = Color.Red
                 Sensors_Form.picSelas09_Up_Alarm.Visible = True
+
+                GT25_Alarm = True
+
+                If GT25_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT25_Location) Then
+                        GasLeak_Loc.Add(GT25_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1531,6 +2098,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas09_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas09_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas09_Mid_Alarm.Visible = False
+
+                GT26_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas09.FillColor = Color.Red
@@ -1541,6 +2111,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas09_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas09_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas09_Mid_Alarm.Visible = True
+
+                GT26_Alarm = True
+
+                If GT26_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT26_Location) Then
+                        GasLeak_Loc.Add(GT26_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1561,6 +2145,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas09_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas09_Low.BackColor = Color.Black
                 Sensors_Form.picSelas09_Low_Alarm.Visible = False
+
+                GT27_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas09.FillColor = Color.Red
@@ -1571,6 +2158,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas09_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas09_Low.BackColor = Color.Red
                 Sensors_Form.picSelas09_Low_Alarm.Visible = True
+
+                GT27_Alarm = True
+
+                If GT27_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT27_Location) Then
+                        GasLeak_Loc.Add(GT27_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1593,6 +2194,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas10_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas10_Up.BackColor = Color.Black
                 Sensors_Form.picSelas10_Up_Alarm.Visible = False
+
+                GT28_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas10.FillColor = Color.Red
@@ -1603,6 +2207,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas10_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas10_Up.BackColor = Color.Red
                 Sensors_Form.picSelas10_Up_Alarm.Visible = True
+
+                GT28_Alarm = True
+
+                If GT28_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT28_Location) Then
+                        GasLeak_Loc.Add(GT28_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1623,6 +2241,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas10_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas10_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas10_Mid_Alarm.Visible = False
+
+                GT29_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas10.FillColor = Color.Red
@@ -1633,6 +2254,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas10_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas10_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas10_Mid_Alarm.Visible = True
+
+                GT29_Alarm = True
+
+                If GT29_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT29_Location) Then
+                        GasLeak_Loc.Add(GT29_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1653,6 +2288,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas10_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas10_Low.BackColor = Color.Black
                 Sensors_Form.picSelas10_Low_Alarm.Visible = False
+
+                GT30_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas10.FillColor = Color.Red
@@ -1663,6 +2301,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas10_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas10_Low.BackColor = Color.Red
                 Sensors_Form.picSelas10_Low_Alarm.Visible = True
+
+                GT30_Alarm = True
+
+                If GT30_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT30_Location) Then
+                        GasLeak_Loc.Add(GT30_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1685,6 +2337,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas11_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas11_Up.BackColor = Color.Black
                 Sensors_Form.picSelas11_Up_Alarm.Visible = False
+
+                GT31_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas11.FillColor = Color.Red
@@ -1695,6 +2350,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas11_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas11_Up.BackColor = Color.Red
                 Sensors_Form.picSelas11_Up_Alarm.Visible = True
+
+                GT31_Alarm = True
+
+                If GT31_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT31_Location) Then
+                        GasLeak_Loc.Add(GT31_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1715,6 +2384,8 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas11_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas11_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas11_Mid_Alarm.Visible = False
+
+                GT32_Alarm = False
             Else
 
                 WIA_Layout_Form.btnSelas11.FillColor = Color.Red
@@ -1725,6 +2396,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas11_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas11_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas11_Mid_Alarm.Visible = True
+
+                GT32_Alarm = True
+
+                If GT32_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT32_Location) Then
+                        GasLeak_Loc.Add(GT32_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1745,6 +2430,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas11_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas11_Low.BackColor = Color.Black
                 Sensors_Form.picSelas11_Low_Alarm.Visible = False
+
+                GT33_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas11.FillColor = Color.Red
@@ -1755,6 +2443,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas11_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas11_Low.BackColor = Color.Red
                 Sensors_Form.picSelas11_Low_Alarm.Visible = True
+
+                GT33_Alarm = True
+
+                If GT33_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT33_Location) Then
+                        GasLeak_Loc.Add(GT33_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1777,6 +2479,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas12_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas12_Up.BackColor = Color.Black
                 Sensors_Form.picSelas12_Up_Alarm.Visible = False
+
+                GT34_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas12.FillColor = Color.Red
@@ -1787,6 +2492,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas12_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas12_Up.BackColor = Color.Red
                 Sensors_Form.picSelas12_Up_Alarm.Visible = True
+
+                GT34_Alarm = True
+
+                If GT34_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT34_Location) Then
+                        GasLeak_Loc.Add(GT34_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1807,6 +2526,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas12_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas12_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas12_Mid_Alarm.Visible = False
+
+                GT35_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas12.FillColor = Color.Red
@@ -1817,6 +2539,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas12_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas12_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas12_Mid_Alarm.Visible = True
+
+                GT35_Alarm = True
+
+                If GT35_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT35_Location) Then
+                        GasLeak_Loc.Add(GT35_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1837,6 +2573,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas12_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas12_Low.BackColor = Color.Black
                 Sensors_Form.picSelas12_Low_Alarm.Visible = False
+
+                GT36_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas12.FillColor = Color.Red
@@ -1847,6 +2586,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas12_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas12_Low.BackColor = Color.Red
                 Sensors_Form.picSelas12_Low_Alarm.Visible = True
+
+                GT36_Alarm = True
+
+                If GT36_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT36_Location) Then
+                        GasLeak_Loc.Add(GT36_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1869,6 +2622,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas13_Up.ForeColor = Color.Lime
                 Sensors_Form.txtSelas13_Up.BackColor = Color.Black
                 Sensors_Form.picSelas13_Up_Alarm.Visible = False
+
+                GT37_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas13.FillColor = Color.Red
@@ -1879,6 +2635,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas13_Up.ForeColor = Color.White
                 Sensors_Form.txtSelas13_Up.BackColor = Color.Red
                 Sensors_Form.picSelas13_Up_Alarm.Visible = True
+
+                GT37_Alarm = True
+
+                If GT37_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT37_Location) Then
+                        GasLeak_Loc.Add(GT37_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1899,6 +2669,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas13_Mid.ForeColor = Color.Lime
                 Sensors_Form.txtSelas13_Mid.BackColor = Color.Black
                 Sensors_Form.picSelas13_Mid_Alarm.Visible = False
+
+                GT38_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas13.FillColor = Color.Red
@@ -1909,6 +2682,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas13_Mid.ForeColor = Color.White
                 Sensors_Form.txtSelas13_Mid.BackColor = Color.Red
                 Sensors_Form.picSelas13_Mid_Alarm.Visible = True
+
+                GT38_Alarm = True
+
+                If GT38_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT38_Location) Then
+                        GasLeak_Loc.Add(GT38_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1929,6 +2716,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas13_Low.ForeColor = Color.Lime
                 Sensors_Form.txtSelas13_Low.BackColor = Color.Black
                 Sensors_Form.picSelas13_Low_Alarm.Visible = False
+
+                GT39_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnSelas13.FillColor = Color.Red
@@ -1939,6 +2729,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtSelas13_Low.ForeColor = Color.White
                 Sensors_Form.txtSelas13_Low.BackColor = Color.Red
                 Sensors_Form.picSelas13_Low_Alarm.Visible = True
+
+                GT39_Alarm = True
+
+                If GT39_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT39_Location) Then
+                        GasLeak_Loc.Add(GT39_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1961,6 +2765,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_01.ForeColor = Color.Lime
                 Sensors_Form.txtTS_01.BackColor = Color.Black
                 Sensors_Form.picTS_01_Alarm.Visible = False
+
+                GT40_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench01.FillColor = Color.Red
@@ -1971,6 +2778,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_01.ForeColor = Color.White
                 Sensors_Form.txtTS_01.BackColor = Color.Red
                 Sensors_Form.picTS_01_Alarm.Visible = True
+
+                GT40_Alarm = True
+
+                If GT40_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT40_Location) Then
+                        GasLeak_Loc.Add(GT40_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -1991,6 +2812,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_02.ForeColor = Color.Lime
                 Sensors_Form.txtTS_02.BackColor = Color.Black
                 Sensors_Form.picTS_02_Alarm.Visible = False
+
+                GT41_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench02.FillColor = Color.Red
@@ -2001,11 +2825,26 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_02.ForeColor = Color.White
                 Sensors_Form.txtTS_02.BackColor = Color.Red
                 Sensors_Form.picTS_02_Alarm.Visible = True
+
+
+                GT41_Alarm = True
+
+                If GT41_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT41_Location) Then
+                        GasLeak_Loc.Add(GT41_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
 
-    'PICO TO SQUARE NANO TRENCH SENSOR VALUE
+    'PICO TO NANO TRENCH SENSOR VALUE
     Sub D41_Alarm()
         Dim readResult = Form1.omronPLC.ReadBool("C52.09")
         Dim alarm_val As String
@@ -2023,6 +2862,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_03.ForeColor = Color.Lime
                 Sensors_Form.txtTS_03.BackColor = Color.Black
                 Sensors_Form.picTS_03_Alarm.Visible = False
+
+                GT42_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench03.FillColor = Color.Red
@@ -2033,6 +2875,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_03.ForeColor = Color.White
                 Sensors_Form.txtTS_03.BackColor = Color.Red
                 Sensors_Form.picTS_03_Alarm.Visible = True
+
+                GT42_Alarm = True
+
+                If GT42_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT42_Location) Then
+                        GasLeak_Loc.Add(GT42_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2053,6 +2909,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_04.ForeColor = Color.Lime
                 Sensors_Form.txtTS_04.BackColor = Color.Black
                 Sensors_Form.picTS_04_Alarm.Visible = False
+
+                GT43_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench04.FillColor = Color.Red
@@ -2063,6 +2922,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_04.ForeColor = Color.White
                 Sensors_Form.txtTS_04.BackColor = Color.Red
                 Sensors_Form.picTS_04_Alarm.Visible = True
+
+
+                GT43_Alarm = True
+
+                If GT43_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT43_Location) Then
+                        GasLeak_Loc.Add(GT43_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2083,6 +2957,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_05.ForeColor = Color.Lime
                 Sensors_Form.txtTS_05.BackColor = Color.Black
                 Sensors_Form.picTS_05_Alarm.Visible = False
+
+                GT44_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench05.FillColor = Color.Red
@@ -2093,6 +2970,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_05.ForeColor = Color.White
                 Sensors_Form.txtTS_05.BackColor = Color.Red
                 Sensors_Form.picTS_05_Alarm.Visible = True
+
+
+                GT44_Alarm = True
+
+                If GT44_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT44_Location) Then
+                        GasLeak_Loc.Add(GT44_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2113,6 +3005,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_06.ForeColor = Color.Lime
                 Sensors_Form.txtTS_06.BackColor = Color.Black
                 Sensors_Form.picTS_06_Alarm.Visible = False
+
+                GT45_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench06.FillColor = Color.Red
@@ -2123,6 +3018,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_06.ForeColor = Color.White
                 Sensors_Form.txtTS_06.BackColor = Color.Red
                 Sensors_Form.picTS_06_Alarm.Visible = True
+
+
+                GT45_Alarm = True
+
+                If GT45_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT45_Location) Then
+                        GasLeak_Loc.Add(GT45_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2143,6 +3053,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_07.ForeColor = Color.Lime
                 Sensors_Form.txtTS_07.BackColor = Color.Black
                 Sensors_Form.picTS_07_Alarm.Visible = False
+
+                GT46_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench07.FillColor = Color.Red
@@ -2153,6 +3066,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_07.ForeColor = Color.White
                 Sensors_Form.txtTS_07.BackColor = Color.Red
                 Sensors_Form.picTS_07_Alarm.Visible = True
+
+                GT46_Alarm = True
+
+                If GT46_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT46_Location) Then
+                        GasLeak_Loc.Add(GT46_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2173,6 +3100,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_08.ForeColor = Color.Lime
                 Sensors_Form.txtTS_08.BackColor = Color.Black
                 Sensors_Form.picTS_08_Alarm.Visible = False
+
+                GT47_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench08.FillColor = Color.Red
@@ -2183,6 +3113,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_08.ForeColor = Color.White
                 Sensors_Form.txtTS_08.BackColor = Color.Red
                 Sensors_Form.picTS_08_Alarm.Visible = True
+
+
+                GT47_Alarm = True
+
+                If GT47_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT47_Location) Then
+                        GasLeak_Loc.Add(GT47_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2203,6 +3148,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_09.ForeColor = Color.Lime
                 Sensors_Form.txtTS_09.BackColor = Color.Black
                 Sensors_Form.picTS_09_Alarm.Visible = False
+
+                GT48_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench09.FillColor = Color.Red
@@ -2213,6 +3161,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_09.ForeColor = Color.White
                 Sensors_Form.txtTS_09.BackColor = Color.Red
                 Sensors_Form.picTS_09_Alarm.Visible = True
+
+                GT48_Alarm = True
+
+                If GT48_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT48_Location) Then
+                        GasLeak_Loc.Add(GT48_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2233,6 +3195,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_10.ForeColor = Color.Lime
                 Sensors_Form.txtTS_10.BackColor = Color.Black
                 Sensors_Form.picTS_10_Alarm.Visible = False
+
+                GT49_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench10.FillColor = Color.Red
@@ -2243,6 +3208,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_10.ForeColor = Color.White
                 Sensors_Form.txtTS_10.BackColor = Color.Red
                 Sensors_Form.picTS_10_Alarm.Visible = True
+
+                GT49_Alarm = True
+
+                If GT49_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT49_Location) Then
+                        GasLeak_Loc.Add(GT49_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2266,6 +3245,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_11.ForeColor = Color.Lime
                 Sensors_Form.txtTS_11.BackColor = Color.Black
                 Sensors_Form.picTS_11_Alarm.Visible = False
+
+                GT50_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench11.FillColor = Color.Red
@@ -2276,6 +3258,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_11.ForeColor = Color.White
                 Sensors_Form.txtTS_11.BackColor = Color.Red
                 Sensors_Form.picTS_11_Alarm.Visible = True
+
+
+                GT50_Alarm = True
+
+                If GT50_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT50_Location) Then
+                        GasLeak_Loc.Add(GT50_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2296,6 +3293,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_12.ForeColor = Color.Lime
                 Sensors_Form.txtTS_12.BackColor = Color.Black
                 Sensors_Form.picTS_12_Alarm.Visible = False
+
+                GT51_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench12.FillColor = Color.Red
@@ -2306,6 +3306,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_12.ForeColor = Color.White
                 Sensors_Form.txtTS_12.BackColor = Color.Red
                 Sensors_Form.picTS_12_Alarm.Visible = True
+
+
+                GT51_Alarm = True
+
+                If GT51_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT51_Location) Then
+                        GasLeak_Loc.Add(GT51_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2326,6 +3341,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_13.ForeColor = Color.Lime
                 Sensors_Form.txtTS_13.BackColor = Color.Black
                 Sensors_Form.picTS_13_Alarm.Visible = False
+
+                GT52_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench13.FillColor = Color.Red
@@ -2336,6 +3354,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_13.ForeColor = Color.White
                 Sensors_Form.txtTS_13.BackColor = Color.Red
                 Sensors_Form.picTS_13_Alarm.Visible = True
+
+                GT52_Alarm = True
+
+                If GT52_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT52_Location) Then
+                        GasLeak_Loc.Add(GT52_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2356,6 +3388,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_14.ForeColor = Color.Lime
                 Sensors_Form.txtTS_14.BackColor = Color.Black
                 Sensors_Form.picTS_14_Alarm.Visible = False
+
+                GT53_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench14.FillColor = Color.Red
@@ -2366,6 +3401,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_14.ForeColor = Color.White
                 Sensors_Form.txtTS_14.BackColor = Color.Red
                 Sensors_Form.picTS_14_Alarm.Visible = True
+
+                GT53_Alarm = True
+
+                If GT53_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT53_Location) Then
+                        GasLeak_Loc.Add(GT53_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2386,6 +3435,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_15.ForeColor = Color.Lime
                 Sensors_Form.txtTS_15.BackColor = Color.Black
                 Sensors_Form.picTS_15_Alarm.Visible = False
+
+                GT54_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench15.FillColor = Color.Red
@@ -2396,6 +3448,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_15.ForeColor = Color.White
                 Sensors_Form.txtTS_15.BackColor = Color.Red
                 Sensors_Form.picTS_15_Alarm.Visible = True
+
+                GT54_Alarm = True
+
+                If GT54_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT54_Location) Then
+                        GasLeak_Loc.Add(GT54_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2416,6 +3482,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_16.ForeColor = Color.Lime
                 Sensors_Form.txtTS_16.BackColor = Color.Black
                 Sensors_Form.picTS_16_Alarm.Visible = False
+
+                GT55_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench16.FillColor = Color.Red
@@ -2426,6 +3495,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_16.ForeColor = Color.White
                 Sensors_Form.txtTS_16.BackColor = Color.Red
                 Sensors_Form.picTS_16_Alarm.Visible = True
+
+
+                GT55_Alarm = True
+
+                If GT55_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT55_Location) Then
+                        GasLeak_Loc.Add(GT55_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2446,6 +3530,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_17.ForeColor = Color.Lime
                 Sensors_Form.txtTS_17.BackColor = Color.Black
                 Sensors_Form.picTS_17_Alarm.Visible = False
+
+                GT56_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench17.FillColor = Color.Red
@@ -2456,6 +3543,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_17.ForeColor = Color.White
                 Sensors_Form.txtTS_17.BackColor = Color.Red
                 Sensors_Form.picTS_17_Alarm.Visible = True
+
+                GT56_Alarm = True
+
+                If GT56_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT56_Location) Then
+                        GasLeak_Loc.Add(GT56_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2476,6 +3577,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_18.ForeColor = Color.Lime
                 Sensors_Form.txtTS_18.BackColor = Color.Black
                 Sensors_Form.picTS_18_Alarm.Visible = False
+
+                GT57_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench18.FillColor = Color.Red
@@ -2486,6 +3590,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_18.ForeColor = Color.White
                 Sensors_Form.txtTS_18.BackColor = Color.Red
                 Sensors_Form.picTS_18_Alarm.Visible = True
+
+                GT57_Alarm = True
+
+                If GT57_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT57_Location) Then
+                        GasLeak_Loc.Add(GT57_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2506,6 +3624,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_19.ForeColor = Color.Lime
                 Sensors_Form.txtTS_19.BackColor = Color.Black
                 Sensors_Form.picTS_19_Alarm.Visible = False
+
+                GT58_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench19.FillColor = Color.Red
@@ -2516,6 +3637,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_19.ForeColor = Color.White
                 Sensors_Form.txtTS_19.BackColor = Color.Red
                 Sensors_Form.picTS_19_Alarm.Visible = True
+
+                GT58_Alarm = True
+
+                If GT58_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT58_Location) Then
+                        GasLeak_Loc.Add(GT58_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2536,6 +3671,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_20.ForeColor = Color.Lime
                 Sensors_Form.txtTS_20.BackColor = Color.Black
                 Sensors_Form.picTS_20_Alarm.Visible = False
+
+                GT59_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnTrench20.FillColor = Color.Red
@@ -2546,6 +3684,21 @@ Module Read_Alarm_Module
                 Sensors_Form.txtTS_20.ForeColor = Color.White
                 Sensors_Form.txtTS_20.BackColor = Color.Red
                 Sensors_Form.picTS_20_Alarm.Visible = True
+
+
+                GT59_Alarm = True
+
+                If GT59_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT59_Location) Then
+                        GasLeak_Loc.Add(GT59_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2569,6 +3722,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtGM1.ForeColor = Color.Lime
                 Sensors_Form.txtGM1.BackColor = Color.Black
                 Sensors_Form.picGM1_Alarm.Visible = False
+
+                GT60_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnGasMixing1.FillColor = Color.Red
@@ -2579,6 +3735,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtGM1.ForeColor = Color.White
                 Sensors_Form.txtGM1.BackColor = Color.Red
                 Sensors_Form.picGM1_Alarm.Visible = True
+
+                GT60_Alarm = True
+
+                If GT60_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT60_Location) Then
+                        GasLeak_Loc.Add(GT60_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2599,6 +3769,9 @@ Module Read_Alarm_Module
                 Sensors_Form.txtGM4.ForeColor = Color.Lime
                 Sensors_Form.txtGM4.BackColor = Color.Black
                 Sensors_Form.picGM4_Alarm.Visible = False
+
+                GT61_Alarm = False
+
             Else
 
                 WIA_Layout_Form.btnGasMixing4.FillColor = Color.Red
@@ -2609,6 +3782,20 @@ Module Read_Alarm_Module
                 Sensors_Form.txtGM4.ForeColor = Color.White
                 Sensors_Form.txtGM4.BackColor = Color.Red
                 Sensors_Form.picGM4_Alarm.Visible = True
+
+                GT61_Alarm = True
+
+                If GT61_Alarm = True Then
+
+                    If Not GasLeak_Loc.Contains(GT61_Location) Then
+                        GasLeak_Loc.Add(GT61_Location)
+                        Design2_Form.TimerMessages.Enabled = True
+                        'Console.WriteLine($"{GT01_Location} has been added to the list.")
+                    Else
+                        'Console.WriteLine($"{GT01_Location} is already in the list and won't be added.")
+                    End If
+                End If
+
             End If
         End If
     End Sub
@@ -2622,6 +3809,9 @@ Module AppConfig_Module
     Public New_COM As String
     Public IP As String
     Public New_IP As String
+
+    Public Mes_Del As Integer
+    Public New_Mes_Del As Integer
 
     Sub Get_COM_NAME()
         Dim name As String = System.Configuration.ConfigurationManager.AppSettings("COM_Name")
@@ -2637,6 +3827,13 @@ Module AppConfig_Module
         IP = stat
     End Sub
 
+    Sub Get_Message_Delay()
+        Dim Del As String = System.Configuration.ConfigurationManager.AppSettings("Message_Delay")
+        Console.WriteLine("Message Delay: " & Del)
+
+        Mes_Del = Del
+    End Sub
+
     Sub Update_COM_NAME()
         config.AppSettings.Settings("COM_Name").Value = New_COM ' Update 
         config.Save(ConfigurationSaveMode.Modified) ' save the new value
@@ -2646,6 +3843,13 @@ Module AppConfig_Module
 
     Sub Update_IP_Address()
         config.AppSettings.Settings("IP_Add").Value = New_IP ' Update 
+        config.Save(ConfigurationSaveMode.Modified) ' save the new value
+
+        ConfigurationManager.RefreshSection("appSettings") 'refresh
+    End Sub
+
+    Sub Update_Message_Delay()
+        config.AppSettings.Settings("Message_Delay").Value = New_Mes_Del ' Update 
         config.Save(ConfigurationSaveMode.Modified) ' save the new value
 
         ConfigurationManager.RefreshSection("appSettings") 'refresh
@@ -2716,12 +3920,16 @@ Module Function_Module
             Master_login.Close()
         End If
     End Sub
+
+    Public Update_MessAndDelay As Boolean
+
 End Module
 
 Module SMS_Module
     Public GlobalSMS As String
     Public Mess As String '= "SMS WIA Gas Leak Monitoring Sample"
     Public Receiver As String
+    Public Receivers_Email As String
 
     Public Sub SerialSetting()
         Design2_Form.SerialPort1.Close()
@@ -2746,16 +3954,32 @@ Module SMS_Module
         End If
     End Sub
 
+    Public message_Tosend As String
     Public Sub SMS_Warning()
 
         Get_Details()
 
         'Dim Reciever As String = "09393998531;09089555589;09991904845"
 
+        'If Not GasLeak_Loc.Contains(GT01_Location) Then
+        '    GasLeak_Loc.Add(GT01_Location)
+        'End If
+
+        'If Not GasLeak_Loc.Contains(GT21_Location) Then
+        '    GasLeak_Loc.Add(GT21_Location)
+        'End If
+
+        'If Not GasLeak_Loc.Contains(GT49_Location) Then
+        '    GasLeak_Loc.Add(GT49_Location)
+        'End If
+
+        Dim GL_Loc As String() = GasLeak_Loc.ToArray()
+        Dim Location_List As String = String.Join(vbNewLine, GL_Loc)
+
         Try
             ' Array or List of phone numbers to send the SMS to
             Dim phoneNumbers As String() = Receiver.Split(";") '
-            Dim message As String = Mess
+            message_Tosend = Mess & vbCrLf & Location_List
 
             SerialSetting()
 
@@ -2775,7 +3999,7 @@ Module SMS_Module
                 Console.WriteLine(Design2_Form.SerialPort1.ReadExisting()) ' For debugging
 
                 ' Write the SMS content
-                Design2_Form.SerialPort1.Write(message)
+                Design2_Form.SerialPort1.Write(message_Tosend)
                 Thread.Sleep(500) ' Short delay
 
                 ' Send Ctrl+Z to submit the message
@@ -2787,13 +4011,82 @@ Module SMS_Module
                 Console.WriteLine(response) ' For debugging
 
                 If response.Contains("OK") Then
-                    MsgBox("Message sent to " & number, MsgBoxStyle.Information)
+                    'MsgBox("Message sent to " & number, MsgBoxStyle.Information)
+                    Console.WriteLine("Message sent")
                 ElseIf response.Contains("ERROR") Then
-                    MsgBox("Failed to send message to " & number, MsgBoxStyle.Critical)
+                    'MsgBox("Failed to send message to " & number, MsgBoxStyle.Critical)
+                    Console.WriteLine("ERROR Message Sent")
                 End If
 
                 Thread.Sleep(3000) ' Optional: Add delay between messages to avoid network issues
             Next
+
+            'Array.Clear(GL_Loc, 0, GL_Loc.Length)
+            'GasLeak_Loc.Clear()
+
+            ' Close the serial port after sending all messages
+            Design2_Form.SerialPort1.Close()
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        Finally
+            If Design2_Form.SerialPort1.IsOpen Then
+                Design2_Form.SerialPort1.Close()
+            End If
+        End Try
+
+    End Sub
+
+    Public Sub SMS_NoLeak()
+
+        Get_Details()
+
+        Try
+            ' Array or List of phone numbers to send the SMS to
+            Dim phoneNumbers As String() = Receiver.Split(";") '
+            message_Tosend = "WIA Gas Leak Monitoring Sytem" & vbCrLf & vbCrLf & "There are no more gas leaks detected."
+
+            SerialSetting()
+
+            ' Set SMS to text mode
+            Design2_Form.SerialPort1.Write("AT+CMGF=1" & vbCrLf)
+            Thread.Sleep(1000) ' Allow time for response
+            Console.WriteLine(Design2_Form.SerialPort1.ReadExisting()) ' For debugging
+
+            ' Loop through each number and send the message
+            For Each number As String In phoneNumbers
+                ' Remove any leading/trailing spaces
+                number = number.Trim()
+
+                ' Set recipient number
+                Design2_Form.SerialPort1.Write("AT+CMGS=" & Chr(34) & number & Chr(34) & vbCrLf)
+                Thread.Sleep(1000) ' Wait for '>'
+                Console.WriteLine(Design2_Form.SerialPort1.ReadExisting()) ' For debugging
+
+                ' Write the SMS content
+                Design2_Form.SerialPort1.Write(message_Tosend)
+                Thread.Sleep(500) ' Short delay
+
+                ' Send Ctrl+Z to submit the message
+                Design2_Form.SerialPort1.Write(Chr(26)) ' Ctrl+Z character
+                Thread.Sleep(2000) ' Wait for the SMS to be sent
+
+                ' Get the response from the modem
+                Dim response As String = Design2_Form.SerialPort1.ReadExisting()
+                Console.WriteLine(response) ' For debugging
+
+                If response.Contains("OK") Then
+                    'MsgBox("Message sent to " & number, MsgBoxStyle.Information)
+                    Console.WriteLine("Message sent")
+                ElseIf response.Contains("ERROR") Then
+                    'MsgBox("Failed to send message to " & number, MsgBoxStyle.Critical)
+                    Console.WriteLine("ERROR Message Sent")
+                End If
+
+                Thread.Sleep(3000) ' Optional: Add delay between messages to avoid network issues
+            Next
+
+            'Array.Clear(GL_Loc, 0, GL_Loc.Length)
+            'GasLeak_Loc.Clear()
 
             ' Close the serial port after sending all messages
             Design2_Form.SerialPort1.Close()
@@ -2811,10 +4104,19 @@ End Module
 
 Module Email_Module
     Public Email As MailMessage
+
     Sub Send_Email()
+
+        Dim GL_Loc As String() = GasLeak_Loc.ToArray()
+        Dim Location_List As String = String.Join("<br>", GL_Loc)
+
+        Dim news_Mes As String
+        news_Mes = Mess.Replace("WIA Gas Leak Monitoring Sytem", "")
+        Dim Body_Mes As String = news_Mes & "<br>" & Location_List
+
         Try
-            Dim EmailAdd As String = "gcatapang@littelfuse.com; bmadlangbayan@littelfuse.com; jburog@littelfuse.com; mroxas2@littelfuse.com"
-            Dim Recipients As String() = EmailAdd.Split(";"c)
+            'Dim EmailAdd As String = "gcatapang@littelfuse.com; bmadlangbayan@littelfuse.com; jburog@littelfuse.com; mroxas2@littelfuse.com"
+            Dim Recipients As String() = Receivers_Email.Split(";"c)
             Dim SMTP As New SmtpClient
 
             Email = New MailMessage
@@ -2826,10 +4128,46 @@ Module Email_Module
 
             Email.From = New MailAddress("WIA_gasleak@littelfuse.com")
             Email.Subject = "WIA Gas Leak Alarm"
-            Email.Body = "<div style='font-family: Arial, sans-serif; font-size: 12pt;'>Good day,<br><br>
-                                        This is a sample email for Gas Leak Monitoring System. 
-                                       <br><br>
-                                        Thank you.</div>
+            Email.Body = "<div style='font-family: Arial, sans-serif; font-size: 12pt;'>Good day,<br><br>" &
+                                        Body_Mes &
+                                       "<br></div>
+                                        <br> <small style='color:Gray;'><i> This is a system generated mail. Please do not reply.</i></small>"
+            Email.IsBodyHtml = True
+            ' Set high importance
+            Email.Priority = MailPriority.High
+
+            'AddHandler SMTP.SendCompleted, AddressOf SendCompletedCallback
+
+            SMTP.Host = "mailrelay.america.littelfuse.com"
+            SMTP.SendAsync(Email, Nothing)
+
+        Catch ex As Exception
+
+            Console.WriteLine("An error occurred: " & ex.Message)
+        End Try
+    End Sub
+
+    Sub Send_Email_NoLeak()
+
+        Dim Body_Mes As String = "There are no more gas leaks detected."
+
+        Try
+            'Dim EmailAdd As String = "gcatapang@littelfuse.com; bmadlangbayan@littelfuse.com; jburog@littelfuse.com; mroxas2@littelfuse.com"
+            Dim Recipients As String() = Receivers_Email.Split(";"c)
+            Dim SMTP As New SmtpClient
+
+            Email = New MailMessage
+
+            For Each Reciever As String In Recipients
+                Email.To.Add(New MailAddress(Reciever.ToString()))
+            Next
+
+
+            Email.From = New MailAddress("WIA_gasleak@littelfuse.com")
+            Email.Subject = "WIA Gas Leak Alarm Update"
+            Email.Body = "<div style='font-family: Arial, sans-serif; font-size: 12pt;'>Good day,<br><br>" &
+                                        Body_Mes &
+                                       "<br></div>
                                         <br> <small style='color:Gray;'><i> This is a system generated mail. Please do not reply.</i></small>"
             Email.IsBodyHtml = True
             ' Set high importance
