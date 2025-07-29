@@ -271,6 +271,7 @@ Partial Class Sensors_Form
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewWIABldgLayoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewAlarmHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox19.SuspendLayout()
         Me.Guna2GroupBox21.SuspendLayout()
@@ -403,7 +404,7 @@ Partial Class Sensors_Form
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(8, 27)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(24, 27)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1175, 1700)
         Me.Guna2GroupBox1.TabIndex = 2
@@ -3662,7 +3663,7 @@ Partial Class Sensors_Form
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewWIABldgLayoutToolStripMenuItem})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewWIABldgLayoutToolStripMenuItem, Me.ViewAlarmHistoryToolStripMenuItem})
         Me.MenuToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
@@ -3674,6 +3675,13 @@ Partial Class Sensors_Form
         Me.ViewWIABldgLayoutToolStripMenuItem.Name = "ViewWIABldgLayoutToolStripMenuItem"
         Me.ViewWIABldgLayoutToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.ViewWIABldgLayoutToolStripMenuItem.Text = "View WIA bldg layout"
+        '
+        'ViewAlarmHistoryToolStripMenuItem
+        '
+        Me.ViewAlarmHistoryToolStripMenuItem.Image = CType(resources.GetObject("ViewAlarmHistoryToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ViewAlarmHistoryToolStripMenuItem.Name = "ViewAlarmHistoryToolStripMenuItem"
+        Me.ViewAlarmHistoryToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.ViewAlarmHistoryToolStripMenuItem.Text = "View alarm history"
         '
         'Sensors_Form
         '
@@ -4082,4 +4090,5 @@ Partial Class Sensors_Form
     Friend WithEvents Label64 As Label
     Friend WithEvents Guna2GroupBox41 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Label65 As Label
+    Friend WithEvents ViewAlarmHistoryToolStripMenuItem As ToolStripMenuItem
 End Class

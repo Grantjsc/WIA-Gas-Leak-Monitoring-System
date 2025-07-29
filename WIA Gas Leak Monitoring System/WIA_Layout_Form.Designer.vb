@@ -23,6 +23,48 @@ Partial Class WIA_Layout_Form
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WIA_Layout_Form))
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnSelas01 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas07 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas08 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas02 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas10 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas04 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas09 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas03 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas13 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas12 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas06 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas11 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSelas05 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnTrench02 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench01 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2GroupBox4 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnTrench08 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench07 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench06 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench05 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench04 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench03 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench10 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench09 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2GroupBox5 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnTrench20 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench19 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench18 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench17 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench16 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench15 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench14 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench13 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench12 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTrench11 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2GroupBox6 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.btnGasMixing4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnGasMixing1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnGM1 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnGM4 = New Guna.UI2.WinForms.Guna2CircleButton()
@@ -68,62 +110,719 @@ Partial Class WIA_Layout_Form
         Me.btnS03 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnS01 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.btnS02 = New Guna.UI2.WinForms.Guna2CircleButton()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnSelas01 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas07 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas08 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas02 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas10 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas04 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas09 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas03 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas13 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas12 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas06 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas11 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSelas05 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.btnTrench02 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench01 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2GroupBox4 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.btnTrench08 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench07 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench06 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench05 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench04 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench03 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench10 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench09 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2GroupBox5 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.btnTrench20 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench19 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench18 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench17 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench16 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench15 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench14 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench13 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench12 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTrench11 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2GroupBox6 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.btnGasMixing4 = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnGasMixing1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2GroupBox1.SuspendLayout()
-        CType(Me.Guna2CirclePictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ViewAlarmHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.Guna2GroupBox4.SuspendLayout()
         Me.Guna2GroupBox5.SuspendLayout()
         Me.Guna2GroupBox6.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2GroupBox1.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1200, 24)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'MenuToolStripMenuItem
+        '
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeToolStripMenuItem, Me.ViewAlarmHistoryToolStripMenuItem})
+        Me.MenuToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.MenuToolStripMenuItem.Text = "Menu"
+        '
+        'btnSelas01
+        '
+        Me.btnSelas01.BorderRadius = 5
+        Me.btnSelas01.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas01.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas01.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas01.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas01.FillColor = System.Drawing.Color.Black
+        Me.btnSelas01.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas01.ForeColor = System.Drawing.Color.White
+        Me.btnSelas01.Location = New System.Drawing.Point(9, 30)
+        Me.btnSelas01.Name = "btnSelas01"
+        Me.btnSelas01.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas01.TabIndex = 145
+        Me.btnSelas01.Text = "Selas 1"
+        '
+        'btnSelas07
+        '
+        Me.btnSelas07.BorderRadius = 5
+        Me.btnSelas07.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas07.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas07.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas07.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas07.FillColor = System.Drawing.Color.Black
+        Me.btnSelas07.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas07.ForeColor = System.Drawing.Color.White
+        Me.btnSelas07.Location = New System.Drawing.Point(94, 30)
+        Me.btnSelas07.Name = "btnSelas07"
+        Me.btnSelas07.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas07.TabIndex = 146
+        Me.btnSelas07.Text = "Selas 7"
+        '
+        'btnSelas08
+        '
+        Me.btnSelas08.BorderRadius = 5
+        Me.btnSelas08.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas08.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas08.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas08.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas08.FillColor = System.Drawing.Color.Black
+        Me.btnSelas08.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas08.ForeColor = System.Drawing.Color.White
+        Me.btnSelas08.Location = New System.Drawing.Point(94, 67)
+        Me.btnSelas08.Name = "btnSelas08"
+        Me.btnSelas08.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas08.TabIndex = 148
+        Me.btnSelas08.Text = "Selas 8"
+        '
+        'btnSelas02
+        '
+        Me.btnSelas02.BorderRadius = 5
+        Me.btnSelas02.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas02.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas02.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas02.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas02.FillColor = System.Drawing.Color.Black
+        Me.btnSelas02.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas02.ForeColor = System.Drawing.Color.White
+        Me.btnSelas02.Location = New System.Drawing.Point(9, 67)
+        Me.btnSelas02.Name = "btnSelas02"
+        Me.btnSelas02.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas02.TabIndex = 147
+        Me.btnSelas02.Text = "Selas 2"
+        '
+        'btnSelas10
+        '
+        Me.btnSelas10.BorderRadius = 5
+        Me.btnSelas10.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas10.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas10.FillColor = System.Drawing.Color.Black
+        Me.btnSelas10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas10.ForeColor = System.Drawing.Color.White
+        Me.btnSelas10.Location = New System.Drawing.Point(94, 141)
+        Me.btnSelas10.Name = "btnSelas10"
+        Me.btnSelas10.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas10.TabIndex = 152
+        Me.btnSelas10.Text = "Selas 10"
+        '
+        'btnSelas04
+        '
+        Me.btnSelas04.BorderRadius = 5
+        Me.btnSelas04.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas04.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas04.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas04.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas04.FillColor = System.Drawing.Color.Black
+        Me.btnSelas04.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas04.ForeColor = System.Drawing.Color.White
+        Me.btnSelas04.Location = New System.Drawing.Point(9, 141)
+        Me.btnSelas04.Name = "btnSelas04"
+        Me.btnSelas04.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas04.TabIndex = 151
+        Me.btnSelas04.Text = "Selas 4"
+        '
+        'btnSelas09
+        '
+        Me.btnSelas09.BorderRadius = 5
+        Me.btnSelas09.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas09.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas09.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas09.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas09.FillColor = System.Drawing.Color.Black
+        Me.btnSelas09.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas09.ForeColor = System.Drawing.Color.White
+        Me.btnSelas09.Location = New System.Drawing.Point(94, 104)
+        Me.btnSelas09.Name = "btnSelas09"
+        Me.btnSelas09.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas09.TabIndex = 150
+        Me.btnSelas09.Text = "Selas 9"
+        '
+        'btnSelas03
+        '
+        Me.btnSelas03.BorderRadius = 5
+        Me.btnSelas03.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas03.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas03.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas03.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas03.FillColor = System.Drawing.Color.Black
+        Me.btnSelas03.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas03.ForeColor = System.Drawing.Color.White
+        Me.btnSelas03.Location = New System.Drawing.Point(9, 104)
+        Me.btnSelas03.Name = "btnSelas03"
+        Me.btnSelas03.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas03.TabIndex = 149
+        Me.btnSelas03.Text = "Selas 3"
+        '
+        'btnSelas13
+        '
+        Me.btnSelas13.BorderRadius = 5
+        Me.btnSelas13.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas13.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas13.FillColor = System.Drawing.Color.Black
+        Me.btnSelas13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas13.ForeColor = System.Drawing.Color.White
+        Me.btnSelas13.Location = New System.Drawing.Point(54, 251)
+        Me.btnSelas13.Name = "btnSelas13"
+        Me.btnSelas13.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas13.TabIndex = 157
+        Me.btnSelas13.Text = "Selas 13"
+        '
+        'btnSelas12
+        '
+        Me.btnSelas12.BorderRadius = 5
+        Me.btnSelas12.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas12.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas12.FillColor = System.Drawing.Color.Black
+        Me.btnSelas12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas12.ForeColor = System.Drawing.Color.White
+        Me.btnSelas12.Location = New System.Drawing.Point(94, 215)
+        Me.btnSelas12.Name = "btnSelas12"
+        Me.btnSelas12.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas12.TabIndex = 156
+        Me.btnSelas12.Text = "Selas 12"
+        '
+        'btnSelas06
+        '
+        Me.btnSelas06.BorderRadius = 5
+        Me.btnSelas06.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas06.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas06.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas06.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas06.FillColor = System.Drawing.Color.Black
+        Me.btnSelas06.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas06.ForeColor = System.Drawing.Color.White
+        Me.btnSelas06.Location = New System.Drawing.Point(9, 215)
+        Me.btnSelas06.Name = "btnSelas06"
+        Me.btnSelas06.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas06.TabIndex = 155
+        Me.btnSelas06.Text = "Selas 6"
+        '
+        'btnSelas11
+        '
+        Me.btnSelas11.BorderRadius = 5
+        Me.btnSelas11.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas11.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas11.FillColor = System.Drawing.Color.Black
+        Me.btnSelas11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas11.ForeColor = System.Drawing.Color.White
+        Me.btnSelas11.Location = New System.Drawing.Point(94, 178)
+        Me.btnSelas11.Name = "btnSelas11"
+        Me.btnSelas11.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas11.TabIndex = 154
+        Me.btnSelas11.Text = "Selas 11"
+        '
+        'btnSelas05
+        '
+        Me.btnSelas05.BorderRadius = 5
+        Me.btnSelas05.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas05.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSelas05.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSelas05.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSelas05.FillColor = System.Drawing.Color.Black
+        Me.btnSelas05.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelas05.ForeColor = System.Drawing.Color.White
+        Me.btnSelas05.Location = New System.Drawing.Point(9, 178)
+        Me.btnSelas05.Name = "btnSelas05"
+        Me.btnSelas05.Size = New System.Drawing.Size(79, 31)
+        Me.btnSelas05.TabIndex = 153
+        Me.btnSelas05.Text = "Selas 5"
+        '
+        'Guna2GroupBox2
+        '
+        Me.Guna2GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox2.BorderRadius = 5
+        Me.Guna2GroupBox2.BorderThickness = 3
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas13)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas01)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas12)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas02)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas11)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas06)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas10)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas03)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas09)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas04)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas08)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas05)
+        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas07)
+        Me.Guna2GroupBox2.CustomBorderThickness = New System.Windows.Forms.Padding(0)
+        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(3, 27)
+        Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(186, 292)
+        Me.Guna2GroupBox2.TabIndex = 15
+        Me.Guna2GroupBox2.Text = "NANO Selas"
+        Me.Guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Guna2GroupBox3
+        '
+        Me.Guna2GroupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2GroupBox3.BorderColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox3.BorderRadius = 5
+        Me.Guna2GroupBox3.BorderThickness = 3
+        Me.Guna2GroupBox3.Controls.Add(Me.btnTrench02)
+        Me.Guna2GroupBox3.Controls.Add(Me.btnTrench01)
+        Me.Guna2GroupBox3.CustomBorderThickness = New System.Windows.Forms.Padding(0)
+        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(3, 325)
+        Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(186, 78)
+        Me.Guna2GroupBox3.TabIndex = 158
+        Me.Guna2GroupBox3.Text = "Warehouse Trench"
+        Me.Guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnTrench02
+        '
+        Me.btnTrench02.BorderRadius = 5
+        Me.btnTrench02.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench02.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench02.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench02.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench02.FillColor = System.Drawing.Color.Black
+        Me.btnTrench02.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench02.ForeColor = System.Drawing.Color.White
+        Me.btnTrench02.Location = New System.Drawing.Point(94, 37)
+        Me.btnTrench02.Name = "btnTrench02"
+        Me.btnTrench02.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench02.TabIndex = 159
+        Me.btnTrench02.Text = "Trench 2"
+        '
+        'btnTrench01
+        '
+        Me.btnTrench01.BorderRadius = 5
+        Me.btnTrench01.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench01.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench01.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench01.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench01.FillColor = System.Drawing.Color.Black
+        Me.btnTrench01.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench01.ForeColor = System.Drawing.Color.White
+        Me.btnTrench01.Location = New System.Drawing.Point(9, 37)
+        Me.btnTrench01.Name = "btnTrench01"
+        Me.btnTrench01.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench01.TabIndex = 158
+        Me.btnTrench01.Text = "Trench 1"
+        '
+        'Guna2GroupBox4
+        '
+        Me.Guna2GroupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2GroupBox4.BorderColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox4.BorderRadius = 5
+        Me.Guna2GroupBox4.BorderThickness = 3
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench08)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench07)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench06)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench05)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench04)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench03)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench10)
+        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench09)
+        Me.Guna2GroupBox4.CustomBorderThickness = New System.Windows.Forms.Padding(0)
+        Me.Guna2GroupBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox4.ForeColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox4.Location = New System.Drawing.Point(3, 409)
+        Me.Guna2GroupBox4.Name = "Guna2GroupBox4"
+        Me.Guna2GroupBox4.Size = New System.Drawing.Size(186, 182)
+        Me.Guna2GroupBox4.TabIndex = 159
+        Me.Guna2GroupBox4.Text = "PICO - NANO Trench"
+        Me.Guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnTrench08
+        '
+        Me.btnTrench08.BorderRadius = 5
+        Me.btnTrench08.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench08.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench08.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench08.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench08.FillColor = System.Drawing.Color.Black
+        Me.btnTrench08.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench08.ForeColor = System.Drawing.Color.White
+        Me.btnTrench08.Location = New System.Drawing.Point(94, 103)
+        Me.btnTrench08.Name = "btnTrench08"
+        Me.btnTrench08.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench08.TabIndex = 167
+        Me.btnTrench08.Text = "Trench 8"
+        '
+        'btnTrench07
+        '
+        Me.btnTrench07.BorderRadius = 5
+        Me.btnTrench07.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench07.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench07.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench07.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench07.FillColor = System.Drawing.Color.Black
+        Me.btnTrench07.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench07.ForeColor = System.Drawing.Color.White
+        Me.btnTrench07.Location = New System.Drawing.Point(9, 103)
+        Me.btnTrench07.Name = "btnTrench07"
+        Me.btnTrench07.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench07.TabIndex = 166
+        Me.btnTrench07.Text = "Trench 7"
+        '
+        'btnTrench06
+        '
+        Me.btnTrench06.BorderRadius = 5
+        Me.btnTrench06.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench06.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench06.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench06.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench06.FillColor = System.Drawing.Color.Black
+        Me.btnTrench06.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench06.ForeColor = System.Drawing.Color.White
+        Me.btnTrench06.Location = New System.Drawing.Point(94, 66)
+        Me.btnTrench06.Name = "btnTrench06"
+        Me.btnTrench06.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench06.TabIndex = 165
+        Me.btnTrench06.Text = "Trench 6"
+        '
+        'btnTrench05
+        '
+        Me.btnTrench05.BorderRadius = 5
+        Me.btnTrench05.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench05.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench05.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench05.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench05.FillColor = System.Drawing.Color.Black
+        Me.btnTrench05.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench05.ForeColor = System.Drawing.Color.White
+        Me.btnTrench05.Location = New System.Drawing.Point(9, 66)
+        Me.btnTrench05.Name = "btnTrench05"
+        Me.btnTrench05.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench05.TabIndex = 164
+        Me.btnTrench05.Text = "Trench 5"
+        '
+        'btnTrench04
+        '
+        Me.btnTrench04.BorderRadius = 5
+        Me.btnTrench04.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench04.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench04.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench04.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench04.FillColor = System.Drawing.Color.Black
+        Me.btnTrench04.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench04.ForeColor = System.Drawing.Color.White
+        Me.btnTrench04.Location = New System.Drawing.Point(94, 29)
+        Me.btnTrench04.Name = "btnTrench04"
+        Me.btnTrench04.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench04.TabIndex = 163
+        Me.btnTrench04.Text = "Trench 4"
+        '
+        'btnTrench03
+        '
+        Me.btnTrench03.BorderRadius = 5
+        Me.btnTrench03.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench03.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench03.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench03.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench03.FillColor = System.Drawing.Color.Black
+        Me.btnTrench03.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench03.ForeColor = System.Drawing.Color.White
+        Me.btnTrench03.Location = New System.Drawing.Point(9, 29)
+        Me.btnTrench03.Name = "btnTrench03"
+        Me.btnTrench03.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench03.TabIndex = 162
+        Me.btnTrench03.Text = "Trench 3"
+        '
+        'btnTrench10
+        '
+        Me.btnTrench10.BorderRadius = 5
+        Me.btnTrench10.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench10.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench10.FillColor = System.Drawing.Color.Black
+        Me.btnTrench10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench10.ForeColor = System.Drawing.Color.White
+        Me.btnTrench10.Location = New System.Drawing.Point(94, 140)
+        Me.btnTrench10.Name = "btnTrench10"
+        Me.btnTrench10.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench10.TabIndex = 161
+        Me.btnTrench10.Text = "Trench 10"
+        '
+        'btnTrench09
+        '
+        Me.btnTrench09.BorderRadius = 5
+        Me.btnTrench09.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench09.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench09.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench09.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench09.FillColor = System.Drawing.Color.Black
+        Me.btnTrench09.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench09.ForeColor = System.Drawing.Color.White
+        Me.btnTrench09.Location = New System.Drawing.Point(9, 140)
+        Me.btnTrench09.Name = "btnTrench09"
+        Me.btnTrench09.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench09.TabIndex = 160
+        Me.btnTrench09.Text = "Trench 9"
+        '
+        'Guna2GroupBox5
+        '
+        Me.Guna2GroupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2GroupBox5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2GroupBox5.BorderColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox5.BorderRadius = 5
+        Me.Guna2GroupBox5.BorderThickness = 3
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench20)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench19)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench18)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench17)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench16)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench15)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench14)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench13)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench12)
+        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench11)
+        Me.Guna2GroupBox5.CustomBorderThickness = New System.Windows.Forms.Padding(0)
+        Me.Guna2GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox5.ForeColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox5.Location = New System.Drawing.Point(3, 596)
+        Me.Guna2GroupBox5.Name = "Guna2GroupBox5"
+        Me.Guna2GroupBox5.Size = New System.Drawing.Size(186, 218)
+        Me.Guna2GroupBox5.TabIndex = 168
+        Me.Guna2GroupBox5.Text = "PICO Trench"
+        Me.Guna2GroupBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnTrench20
+        '
+        Me.btnTrench20.BorderRadius = 5
+        Me.btnTrench20.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench20.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench20.FillColor = System.Drawing.Color.Black
+        Me.btnTrench20.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench20.ForeColor = System.Drawing.Color.White
+        Me.btnTrench20.Location = New System.Drawing.Point(94, 176)
+        Me.btnTrench20.Name = "btnTrench20"
+        Me.btnTrench20.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench20.TabIndex = 171
+        Me.btnTrench20.Text = "Trench 20"
+        '
+        'btnTrench19
+        '
+        Me.btnTrench19.BorderRadius = 5
+        Me.btnTrench19.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench19.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench19.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench19.FillColor = System.Drawing.Color.Black
+        Me.btnTrench19.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench19.ForeColor = System.Drawing.Color.White
+        Me.btnTrench19.Location = New System.Drawing.Point(9, 176)
+        Me.btnTrench19.Name = "btnTrench19"
+        Me.btnTrench19.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench19.TabIndex = 170
+        Me.btnTrench19.Text = "Trench 19"
+        '
+        'btnTrench18
+        '
+        Me.btnTrench18.BorderRadius = 5
+        Me.btnTrench18.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench18.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench18.FillColor = System.Drawing.Color.Black
+        Me.btnTrench18.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench18.ForeColor = System.Drawing.Color.White
+        Me.btnTrench18.Location = New System.Drawing.Point(94, 139)
+        Me.btnTrench18.Name = "btnTrench18"
+        Me.btnTrench18.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench18.TabIndex = 169
+        Me.btnTrench18.Text = "Trench 18"
+        '
+        'btnTrench17
+        '
+        Me.btnTrench17.BorderRadius = 5
+        Me.btnTrench17.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench17.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench17.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench17.FillColor = System.Drawing.Color.Black
+        Me.btnTrench17.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench17.ForeColor = System.Drawing.Color.White
+        Me.btnTrench17.Location = New System.Drawing.Point(9, 139)
+        Me.btnTrench17.Name = "btnTrench17"
+        Me.btnTrench17.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench17.TabIndex = 168
+        Me.btnTrench17.Text = "Trench 17"
+        '
+        'btnTrench16
+        '
+        Me.btnTrench16.BorderRadius = 5
+        Me.btnTrench16.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench16.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench16.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench16.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench16.FillColor = System.Drawing.Color.Black
+        Me.btnTrench16.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench16.ForeColor = System.Drawing.Color.White
+        Me.btnTrench16.Location = New System.Drawing.Point(94, 102)
+        Me.btnTrench16.Name = "btnTrench16"
+        Me.btnTrench16.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench16.TabIndex = 167
+        Me.btnTrench16.Text = "Trench 16"
+        '
+        'btnTrench15
+        '
+        Me.btnTrench15.BorderRadius = 5
+        Me.btnTrench15.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench15.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench15.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench15.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench15.FillColor = System.Drawing.Color.Black
+        Me.btnTrench15.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench15.ForeColor = System.Drawing.Color.White
+        Me.btnTrench15.Location = New System.Drawing.Point(9, 102)
+        Me.btnTrench15.Name = "btnTrench15"
+        Me.btnTrench15.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench15.TabIndex = 166
+        Me.btnTrench15.Text = "Trench 15"
+        '
+        'btnTrench14
+        '
+        Me.btnTrench14.BorderRadius = 5
+        Me.btnTrench14.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench14.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench14.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench14.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench14.FillColor = System.Drawing.Color.Black
+        Me.btnTrench14.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench14.ForeColor = System.Drawing.Color.White
+        Me.btnTrench14.Location = New System.Drawing.Point(94, 65)
+        Me.btnTrench14.Name = "btnTrench14"
+        Me.btnTrench14.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench14.TabIndex = 165
+        Me.btnTrench14.Text = "Trench 14"
+        '
+        'btnTrench13
+        '
+        Me.btnTrench13.BorderRadius = 5
+        Me.btnTrench13.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench13.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench13.FillColor = System.Drawing.Color.Black
+        Me.btnTrench13.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench13.ForeColor = System.Drawing.Color.White
+        Me.btnTrench13.Location = New System.Drawing.Point(9, 65)
+        Me.btnTrench13.Name = "btnTrench13"
+        Me.btnTrench13.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench13.TabIndex = 164
+        Me.btnTrench13.Text = "Trench 13"
+        '
+        'btnTrench12
+        '
+        Me.btnTrench12.BorderRadius = 5
+        Me.btnTrench12.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench12.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench12.FillColor = System.Drawing.Color.Black
+        Me.btnTrench12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench12.ForeColor = System.Drawing.Color.White
+        Me.btnTrench12.Location = New System.Drawing.Point(94, 28)
+        Me.btnTrench12.Name = "btnTrench12"
+        Me.btnTrench12.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench12.TabIndex = 163
+        Me.btnTrench12.Text = "Trench 12"
+        '
+        'btnTrench11
+        '
+        Me.btnTrench11.BorderRadius = 5
+        Me.btnTrench11.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTrench11.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTrench11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnTrench11.FillColor = System.Drawing.Color.Black
+        Me.btnTrench11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrench11.ForeColor = System.Drawing.Color.White
+        Me.btnTrench11.Location = New System.Drawing.Point(9, 28)
+        Me.btnTrench11.Name = "btnTrench11"
+        Me.btnTrench11.Size = New System.Drawing.Size(79, 31)
+        Me.btnTrench11.TabIndex = 162
+        Me.btnTrench11.Text = "Trench 11"
+        '
+        'Guna2GroupBox6
+        '
+        Me.Guna2GroupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2GroupBox6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2GroupBox6.BorderColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox6.BorderRadius = 5
+        Me.Guna2GroupBox6.BorderThickness = 3
+        Me.Guna2GroupBox6.Controls.Add(Me.btnGasMixing4)
+        Me.Guna2GroupBox6.Controls.Add(Me.btnGasMixing1)
+        Me.Guna2GroupBox6.CustomBorderThickness = New System.Windows.Forms.Padding(0)
+        Me.Guna2GroupBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox6.ForeColor = System.Drawing.Color.Green
+        Me.Guna2GroupBox6.Location = New System.Drawing.Point(3, 820)
+        Me.Guna2GroupBox6.Name = "Guna2GroupBox6"
+        Me.Guna2GroupBox6.Size = New System.Drawing.Size(186, 78)
+        Me.Guna2GroupBox6.TabIndex = 160
+        Me.Guna2GroupBox6.Text = "Gas Mixing Area"
+        Me.Guna2GroupBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnGasMixing4
+        '
+        Me.btnGasMixing4.BorderRadius = 5
+        Me.btnGasMixing4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnGasMixing4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnGasMixing4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnGasMixing4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnGasMixing4.FillColor = System.Drawing.Color.Black
+        Me.btnGasMixing4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGasMixing4.ForeColor = System.Drawing.Color.White
+        Me.btnGasMixing4.Location = New System.Drawing.Point(94, 37)
+        Me.btnGasMixing4.Name = "btnGasMixing4"
+        Me.btnGasMixing4.Size = New System.Drawing.Size(79, 31)
+        Me.btnGasMixing4.TabIndex = 159
+        Me.btnGasMixing4.Text = "Gas Mixing 4"
+        '
+        'btnGasMixing1
+        '
+        Me.btnGasMixing1.BorderRadius = 5
+        Me.btnGasMixing1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnGasMixing1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnGasMixing1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnGasMixing1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnGasMixing1.FillColor = System.Drawing.Color.Black
+        Me.btnGasMixing1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGasMixing1.ForeColor = System.Drawing.Color.White
+        Me.btnGasMixing1.Location = New System.Drawing.Point(9, 37)
+        Me.btnGasMixing1.Name = "btnGasMixing1"
+        Me.btnGasMixing1.Size = New System.Drawing.Size(79, 31)
+        Me.btnGasMixing1.TabIndex = 158
+        Me.btnGasMixing1.Text = " Gas Mixing 1"
         '
         'Panel1
         '
@@ -916,710 +1615,19 @@ Partial Class WIA_Layout_Form
         Me.btnS02.TabIndex = 1
         Me.btnS02.Text = "S2"
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1200, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'MenuToolStripMenuItem
-        '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeToolStripMenuItem})
-        Me.MenuToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.MenuToolStripMenuItem.Text = "Menu"
-        '
         'ChangeToolStripMenuItem
         '
         Me.ChangeToolStripMenuItem.Image = CType(resources.GetObject("ChangeToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ChangeToolStripMenuItem.Name = "ChangeToolStripMenuItem"
-        Me.ChangeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ChangeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ChangeToolStripMenuItem.Text = "View all senssors"
         '
-        'btnSelas01
-        '
-        Me.btnSelas01.BorderRadius = 5
-        Me.btnSelas01.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas01.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas01.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas01.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas01.FillColor = System.Drawing.Color.Black
-        Me.btnSelas01.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas01.ForeColor = System.Drawing.Color.White
-        Me.btnSelas01.Location = New System.Drawing.Point(9, 30)
-        Me.btnSelas01.Name = "btnSelas01"
-        Me.btnSelas01.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas01.TabIndex = 145
-        Me.btnSelas01.Text = "Selas 1"
-        '
-        'btnSelas07
-        '
-        Me.btnSelas07.BorderRadius = 5
-        Me.btnSelas07.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas07.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas07.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas07.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas07.FillColor = System.Drawing.Color.Black
-        Me.btnSelas07.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas07.ForeColor = System.Drawing.Color.White
-        Me.btnSelas07.Location = New System.Drawing.Point(94, 30)
-        Me.btnSelas07.Name = "btnSelas07"
-        Me.btnSelas07.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas07.TabIndex = 146
-        Me.btnSelas07.Text = "Selas 7"
-        '
-        'btnSelas08
-        '
-        Me.btnSelas08.BorderRadius = 5
-        Me.btnSelas08.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas08.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas08.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas08.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas08.FillColor = System.Drawing.Color.Black
-        Me.btnSelas08.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas08.ForeColor = System.Drawing.Color.White
-        Me.btnSelas08.Location = New System.Drawing.Point(94, 67)
-        Me.btnSelas08.Name = "btnSelas08"
-        Me.btnSelas08.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas08.TabIndex = 148
-        Me.btnSelas08.Text = "Selas 8"
-        '
-        'btnSelas02
-        '
-        Me.btnSelas02.BorderRadius = 5
-        Me.btnSelas02.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas02.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas02.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas02.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas02.FillColor = System.Drawing.Color.Black
-        Me.btnSelas02.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas02.ForeColor = System.Drawing.Color.White
-        Me.btnSelas02.Location = New System.Drawing.Point(9, 67)
-        Me.btnSelas02.Name = "btnSelas02"
-        Me.btnSelas02.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas02.TabIndex = 147
-        Me.btnSelas02.Text = "Selas 2"
-        '
-        'btnSelas10
-        '
-        Me.btnSelas10.BorderRadius = 5
-        Me.btnSelas10.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas10.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas10.FillColor = System.Drawing.Color.Black
-        Me.btnSelas10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas10.ForeColor = System.Drawing.Color.White
-        Me.btnSelas10.Location = New System.Drawing.Point(94, 141)
-        Me.btnSelas10.Name = "btnSelas10"
-        Me.btnSelas10.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas10.TabIndex = 152
-        Me.btnSelas10.Text = "Selas 10"
-        '
-        'btnSelas04
-        '
-        Me.btnSelas04.BorderRadius = 5
-        Me.btnSelas04.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas04.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas04.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas04.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas04.FillColor = System.Drawing.Color.Black
-        Me.btnSelas04.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas04.ForeColor = System.Drawing.Color.White
-        Me.btnSelas04.Location = New System.Drawing.Point(9, 141)
-        Me.btnSelas04.Name = "btnSelas04"
-        Me.btnSelas04.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas04.TabIndex = 151
-        Me.btnSelas04.Text = "Selas 4"
-        '
-        'btnSelas09
-        '
-        Me.btnSelas09.BorderRadius = 5
-        Me.btnSelas09.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas09.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas09.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas09.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas09.FillColor = System.Drawing.Color.Black
-        Me.btnSelas09.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas09.ForeColor = System.Drawing.Color.White
-        Me.btnSelas09.Location = New System.Drawing.Point(94, 104)
-        Me.btnSelas09.Name = "btnSelas09"
-        Me.btnSelas09.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas09.TabIndex = 150
-        Me.btnSelas09.Text = "Selas 9"
-        '
-        'btnSelas03
-        '
-        Me.btnSelas03.BorderRadius = 5
-        Me.btnSelas03.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas03.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas03.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas03.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas03.FillColor = System.Drawing.Color.Black
-        Me.btnSelas03.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas03.ForeColor = System.Drawing.Color.White
-        Me.btnSelas03.Location = New System.Drawing.Point(9, 104)
-        Me.btnSelas03.Name = "btnSelas03"
-        Me.btnSelas03.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas03.TabIndex = 149
-        Me.btnSelas03.Text = "Selas 3"
-        '
-        'btnSelas13
-        '
-        Me.btnSelas13.BorderRadius = 5
-        Me.btnSelas13.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas13.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas13.FillColor = System.Drawing.Color.Black
-        Me.btnSelas13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas13.ForeColor = System.Drawing.Color.White
-        Me.btnSelas13.Location = New System.Drawing.Point(54, 251)
-        Me.btnSelas13.Name = "btnSelas13"
-        Me.btnSelas13.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas13.TabIndex = 157
-        Me.btnSelas13.Text = "Selas 13"
-        '
-        'btnSelas12
-        '
-        Me.btnSelas12.BorderRadius = 5
-        Me.btnSelas12.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas12.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas12.FillColor = System.Drawing.Color.Black
-        Me.btnSelas12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas12.ForeColor = System.Drawing.Color.White
-        Me.btnSelas12.Location = New System.Drawing.Point(94, 215)
-        Me.btnSelas12.Name = "btnSelas12"
-        Me.btnSelas12.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas12.TabIndex = 156
-        Me.btnSelas12.Text = "Selas 12"
-        '
-        'btnSelas06
-        '
-        Me.btnSelas06.BorderRadius = 5
-        Me.btnSelas06.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas06.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas06.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas06.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas06.FillColor = System.Drawing.Color.Black
-        Me.btnSelas06.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas06.ForeColor = System.Drawing.Color.White
-        Me.btnSelas06.Location = New System.Drawing.Point(9, 215)
-        Me.btnSelas06.Name = "btnSelas06"
-        Me.btnSelas06.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas06.TabIndex = 155
-        Me.btnSelas06.Text = "Selas 6"
-        '
-        'btnSelas11
-        '
-        Me.btnSelas11.BorderRadius = 5
-        Me.btnSelas11.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas11.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas11.FillColor = System.Drawing.Color.Black
-        Me.btnSelas11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas11.ForeColor = System.Drawing.Color.White
-        Me.btnSelas11.Location = New System.Drawing.Point(94, 178)
-        Me.btnSelas11.Name = "btnSelas11"
-        Me.btnSelas11.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas11.TabIndex = 154
-        Me.btnSelas11.Text = "Selas 11"
-        '
-        'btnSelas05
-        '
-        Me.btnSelas05.BorderRadius = 5
-        Me.btnSelas05.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas05.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSelas05.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSelas05.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSelas05.FillColor = System.Drawing.Color.Black
-        Me.btnSelas05.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelas05.ForeColor = System.Drawing.Color.White
-        Me.btnSelas05.Location = New System.Drawing.Point(9, 178)
-        Me.btnSelas05.Name = "btnSelas05"
-        Me.btnSelas05.Size = New System.Drawing.Size(79, 31)
-        Me.btnSelas05.TabIndex = 153
-        Me.btnSelas05.Text = "Selas 5"
-        '
-        'Guna2GroupBox2
-        '
-        Me.Guna2GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox2.BorderRadius = 5
-        Me.Guna2GroupBox2.BorderThickness = 3
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas13)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas01)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas12)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas02)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas11)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas06)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas10)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas03)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas09)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas04)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas08)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas05)
-        Me.Guna2GroupBox2.Controls.Add(Me.btnSelas07)
-        Me.Guna2GroupBox2.CustomBorderThickness = New System.Windows.Forms.Padding(0)
-        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(3, 27)
-        Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(186, 292)
-        Me.Guna2GroupBox2.TabIndex = 15
-        Me.Guna2GroupBox2.Text = "NANO Selas"
-        Me.Guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Guna2GroupBox3
-        '
-        Me.Guna2GroupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2GroupBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox3.BorderColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox3.BorderRadius = 5
-        Me.Guna2GroupBox3.BorderThickness = 3
-        Me.Guna2GroupBox3.Controls.Add(Me.btnTrench02)
-        Me.Guna2GroupBox3.Controls.Add(Me.btnTrench01)
-        Me.Guna2GroupBox3.CustomBorderThickness = New System.Windows.Forms.Padding(0)
-        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(3, 325)
-        Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(186, 78)
-        Me.Guna2GroupBox3.TabIndex = 158
-        Me.Guna2GroupBox3.Text = "Warehouse Trench"
-        Me.Guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnTrench02
-        '
-        Me.btnTrench02.BorderRadius = 5
-        Me.btnTrench02.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench02.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench02.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench02.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench02.FillColor = System.Drawing.Color.Black
-        Me.btnTrench02.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench02.ForeColor = System.Drawing.Color.White
-        Me.btnTrench02.Location = New System.Drawing.Point(94, 37)
-        Me.btnTrench02.Name = "btnTrench02"
-        Me.btnTrench02.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench02.TabIndex = 159
-        Me.btnTrench02.Text = "Trench 2"
-        '
-        'btnTrench01
-        '
-        Me.btnTrench01.BorderRadius = 5
-        Me.btnTrench01.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench01.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench01.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench01.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench01.FillColor = System.Drawing.Color.Black
-        Me.btnTrench01.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench01.ForeColor = System.Drawing.Color.White
-        Me.btnTrench01.Location = New System.Drawing.Point(9, 37)
-        Me.btnTrench01.Name = "btnTrench01"
-        Me.btnTrench01.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench01.TabIndex = 158
-        Me.btnTrench01.Text = "Trench 1"
-        '
-        'Guna2GroupBox4
-        '
-        Me.Guna2GroupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox4.BorderColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox4.BorderRadius = 5
-        Me.Guna2GroupBox4.BorderThickness = 3
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench08)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench07)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench06)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench05)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench04)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench03)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench10)
-        Me.Guna2GroupBox4.Controls.Add(Me.btnTrench09)
-        Me.Guna2GroupBox4.CustomBorderThickness = New System.Windows.Forms.Padding(0)
-        Me.Guna2GroupBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox4.ForeColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox4.Location = New System.Drawing.Point(3, 409)
-        Me.Guna2GroupBox4.Name = "Guna2GroupBox4"
-        Me.Guna2GroupBox4.Size = New System.Drawing.Size(186, 182)
-        Me.Guna2GroupBox4.TabIndex = 159
-        Me.Guna2GroupBox4.Text = "PICO - NANO Trench"
-        Me.Guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnTrench08
-        '
-        Me.btnTrench08.BorderRadius = 5
-        Me.btnTrench08.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench08.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench08.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench08.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench08.FillColor = System.Drawing.Color.Black
-        Me.btnTrench08.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench08.ForeColor = System.Drawing.Color.White
-        Me.btnTrench08.Location = New System.Drawing.Point(94, 103)
-        Me.btnTrench08.Name = "btnTrench08"
-        Me.btnTrench08.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench08.TabIndex = 167
-        Me.btnTrench08.Text = "Trench 8"
-        '
-        'btnTrench07
-        '
-        Me.btnTrench07.BorderRadius = 5
-        Me.btnTrench07.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench07.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench07.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench07.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench07.FillColor = System.Drawing.Color.Black
-        Me.btnTrench07.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench07.ForeColor = System.Drawing.Color.White
-        Me.btnTrench07.Location = New System.Drawing.Point(9, 103)
-        Me.btnTrench07.Name = "btnTrench07"
-        Me.btnTrench07.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench07.TabIndex = 166
-        Me.btnTrench07.Text = "Trench 7"
-        '
-        'btnTrench06
-        '
-        Me.btnTrench06.BorderRadius = 5
-        Me.btnTrench06.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench06.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench06.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench06.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench06.FillColor = System.Drawing.Color.Black
-        Me.btnTrench06.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench06.ForeColor = System.Drawing.Color.White
-        Me.btnTrench06.Location = New System.Drawing.Point(94, 66)
-        Me.btnTrench06.Name = "btnTrench06"
-        Me.btnTrench06.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench06.TabIndex = 165
-        Me.btnTrench06.Text = "Trench 6"
-        '
-        'btnTrench05
-        '
-        Me.btnTrench05.BorderRadius = 5
-        Me.btnTrench05.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench05.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench05.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench05.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench05.FillColor = System.Drawing.Color.Black
-        Me.btnTrench05.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench05.ForeColor = System.Drawing.Color.White
-        Me.btnTrench05.Location = New System.Drawing.Point(9, 66)
-        Me.btnTrench05.Name = "btnTrench05"
-        Me.btnTrench05.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench05.TabIndex = 164
-        Me.btnTrench05.Text = "Trench 5"
-        '
-        'btnTrench04
-        '
-        Me.btnTrench04.BorderRadius = 5
-        Me.btnTrench04.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench04.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench04.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench04.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench04.FillColor = System.Drawing.Color.Black
-        Me.btnTrench04.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench04.ForeColor = System.Drawing.Color.White
-        Me.btnTrench04.Location = New System.Drawing.Point(94, 29)
-        Me.btnTrench04.Name = "btnTrench04"
-        Me.btnTrench04.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench04.TabIndex = 163
-        Me.btnTrench04.Text = "Trench 4"
-        '
-        'btnTrench03
-        '
-        Me.btnTrench03.BorderRadius = 5
-        Me.btnTrench03.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench03.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench03.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench03.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench03.FillColor = System.Drawing.Color.Black
-        Me.btnTrench03.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench03.ForeColor = System.Drawing.Color.White
-        Me.btnTrench03.Location = New System.Drawing.Point(9, 29)
-        Me.btnTrench03.Name = "btnTrench03"
-        Me.btnTrench03.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench03.TabIndex = 162
-        Me.btnTrench03.Text = "Trench 3"
-        '
-        'btnTrench10
-        '
-        Me.btnTrench10.BorderRadius = 5
-        Me.btnTrench10.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench10.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench10.FillColor = System.Drawing.Color.Black
-        Me.btnTrench10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench10.ForeColor = System.Drawing.Color.White
-        Me.btnTrench10.Location = New System.Drawing.Point(94, 140)
-        Me.btnTrench10.Name = "btnTrench10"
-        Me.btnTrench10.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench10.TabIndex = 161
-        Me.btnTrench10.Text = "Trench 10"
-        '
-        'btnTrench09
-        '
-        Me.btnTrench09.BorderRadius = 5
-        Me.btnTrench09.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench09.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench09.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench09.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench09.FillColor = System.Drawing.Color.Black
-        Me.btnTrench09.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench09.ForeColor = System.Drawing.Color.White
-        Me.btnTrench09.Location = New System.Drawing.Point(9, 140)
-        Me.btnTrench09.Name = "btnTrench09"
-        Me.btnTrench09.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench09.TabIndex = 160
-        Me.btnTrench09.Text = "Trench 9"
-        '
-        'Guna2GroupBox5
-        '
-        Me.Guna2GroupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2GroupBox5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox5.BorderColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox5.BorderRadius = 5
-        Me.Guna2GroupBox5.BorderThickness = 3
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench20)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench19)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench18)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench17)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench16)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench15)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench14)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench13)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench12)
-        Me.Guna2GroupBox5.Controls.Add(Me.btnTrench11)
-        Me.Guna2GroupBox5.CustomBorderThickness = New System.Windows.Forms.Padding(0)
-        Me.Guna2GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox5.ForeColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox5.Location = New System.Drawing.Point(3, 596)
-        Me.Guna2GroupBox5.Name = "Guna2GroupBox5"
-        Me.Guna2GroupBox5.Size = New System.Drawing.Size(186, 218)
-        Me.Guna2GroupBox5.TabIndex = 168
-        Me.Guna2GroupBox5.Text = "PICO Trench"
-        Me.Guna2GroupBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnTrench20
-        '
-        Me.btnTrench20.BorderRadius = 5
-        Me.btnTrench20.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench20.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench20.FillColor = System.Drawing.Color.Black
-        Me.btnTrench20.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench20.ForeColor = System.Drawing.Color.White
-        Me.btnTrench20.Location = New System.Drawing.Point(94, 176)
-        Me.btnTrench20.Name = "btnTrench20"
-        Me.btnTrench20.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench20.TabIndex = 171
-        Me.btnTrench20.Text = "Trench 20"
-        '
-        'btnTrench19
-        '
-        Me.btnTrench19.BorderRadius = 5
-        Me.btnTrench19.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench19.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench19.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench19.FillColor = System.Drawing.Color.Black
-        Me.btnTrench19.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench19.ForeColor = System.Drawing.Color.White
-        Me.btnTrench19.Location = New System.Drawing.Point(9, 176)
-        Me.btnTrench19.Name = "btnTrench19"
-        Me.btnTrench19.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench19.TabIndex = 170
-        Me.btnTrench19.Text = "Trench 19"
-        '
-        'btnTrench18
-        '
-        Me.btnTrench18.BorderRadius = 5
-        Me.btnTrench18.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench18.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench18.FillColor = System.Drawing.Color.Black
-        Me.btnTrench18.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench18.ForeColor = System.Drawing.Color.White
-        Me.btnTrench18.Location = New System.Drawing.Point(94, 139)
-        Me.btnTrench18.Name = "btnTrench18"
-        Me.btnTrench18.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench18.TabIndex = 169
-        Me.btnTrench18.Text = "Trench 18"
-        '
-        'btnTrench17
-        '
-        Me.btnTrench17.BorderRadius = 5
-        Me.btnTrench17.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench17.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench17.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench17.FillColor = System.Drawing.Color.Black
-        Me.btnTrench17.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench17.ForeColor = System.Drawing.Color.White
-        Me.btnTrench17.Location = New System.Drawing.Point(9, 139)
-        Me.btnTrench17.Name = "btnTrench17"
-        Me.btnTrench17.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench17.TabIndex = 168
-        Me.btnTrench17.Text = "Trench 17"
-        '
-        'btnTrench16
-        '
-        Me.btnTrench16.BorderRadius = 5
-        Me.btnTrench16.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench16.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench16.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench16.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench16.FillColor = System.Drawing.Color.Black
-        Me.btnTrench16.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench16.ForeColor = System.Drawing.Color.White
-        Me.btnTrench16.Location = New System.Drawing.Point(94, 102)
-        Me.btnTrench16.Name = "btnTrench16"
-        Me.btnTrench16.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench16.TabIndex = 167
-        Me.btnTrench16.Text = "Trench 16"
-        '
-        'btnTrench15
-        '
-        Me.btnTrench15.BorderRadius = 5
-        Me.btnTrench15.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench15.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench15.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench15.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench15.FillColor = System.Drawing.Color.Black
-        Me.btnTrench15.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench15.ForeColor = System.Drawing.Color.White
-        Me.btnTrench15.Location = New System.Drawing.Point(9, 102)
-        Me.btnTrench15.Name = "btnTrench15"
-        Me.btnTrench15.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench15.TabIndex = 166
-        Me.btnTrench15.Text = "Trench 15"
-        '
-        'btnTrench14
-        '
-        Me.btnTrench14.BorderRadius = 5
-        Me.btnTrench14.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench14.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench14.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench14.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench14.FillColor = System.Drawing.Color.Black
-        Me.btnTrench14.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench14.ForeColor = System.Drawing.Color.White
-        Me.btnTrench14.Location = New System.Drawing.Point(94, 65)
-        Me.btnTrench14.Name = "btnTrench14"
-        Me.btnTrench14.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench14.TabIndex = 165
-        Me.btnTrench14.Text = "Trench 14"
-        '
-        'btnTrench13
-        '
-        Me.btnTrench13.BorderRadius = 5
-        Me.btnTrench13.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench13.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench13.FillColor = System.Drawing.Color.Black
-        Me.btnTrench13.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench13.ForeColor = System.Drawing.Color.White
-        Me.btnTrench13.Location = New System.Drawing.Point(9, 65)
-        Me.btnTrench13.Name = "btnTrench13"
-        Me.btnTrench13.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench13.TabIndex = 164
-        Me.btnTrench13.Text = "Trench 13"
-        '
-        'btnTrench12
-        '
-        Me.btnTrench12.BorderRadius = 5
-        Me.btnTrench12.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench12.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench12.FillColor = System.Drawing.Color.Black
-        Me.btnTrench12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench12.ForeColor = System.Drawing.Color.White
-        Me.btnTrench12.Location = New System.Drawing.Point(94, 28)
-        Me.btnTrench12.Name = "btnTrench12"
-        Me.btnTrench12.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench12.TabIndex = 163
-        Me.btnTrench12.Text = "Trench 12"
-        '
-        'btnTrench11
-        '
-        Me.btnTrench11.BorderRadius = 5
-        Me.btnTrench11.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnTrench11.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnTrench11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTrench11.FillColor = System.Drawing.Color.Black
-        Me.btnTrench11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrench11.ForeColor = System.Drawing.Color.White
-        Me.btnTrench11.Location = New System.Drawing.Point(9, 28)
-        Me.btnTrench11.Name = "btnTrench11"
-        Me.btnTrench11.Size = New System.Drawing.Size(79, 31)
-        Me.btnTrench11.TabIndex = 162
-        Me.btnTrench11.Text = "Trench 11"
-        '
-        'Guna2GroupBox6
-        '
-        Me.Guna2GroupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2GroupBox6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox6.BorderColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox6.BorderRadius = 5
-        Me.Guna2GroupBox6.BorderThickness = 3
-        Me.Guna2GroupBox6.Controls.Add(Me.btnGasMixing4)
-        Me.Guna2GroupBox6.Controls.Add(Me.btnGasMixing1)
-        Me.Guna2GroupBox6.CustomBorderThickness = New System.Windows.Forms.Padding(0)
-        Me.Guna2GroupBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox6.ForeColor = System.Drawing.Color.Green
-        Me.Guna2GroupBox6.Location = New System.Drawing.Point(3, 820)
-        Me.Guna2GroupBox6.Name = "Guna2GroupBox6"
-        Me.Guna2GroupBox6.Size = New System.Drawing.Size(186, 78)
-        Me.Guna2GroupBox6.TabIndex = 160
-        Me.Guna2GroupBox6.Text = "Gas Mixing Area"
-        Me.Guna2GroupBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnGasMixing4
-        '
-        Me.btnGasMixing4.BorderRadius = 5
-        Me.btnGasMixing4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnGasMixing4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnGasMixing4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGasMixing4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnGasMixing4.FillColor = System.Drawing.Color.Black
-        Me.btnGasMixing4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGasMixing4.ForeColor = System.Drawing.Color.White
-        Me.btnGasMixing4.Location = New System.Drawing.Point(94, 37)
-        Me.btnGasMixing4.Name = "btnGasMixing4"
-        Me.btnGasMixing4.Size = New System.Drawing.Size(79, 31)
-        Me.btnGasMixing4.TabIndex = 159
-        Me.btnGasMixing4.Text = "Gas Mixing 4"
-        '
-        'btnGasMixing1
-        '
-        Me.btnGasMixing1.BorderRadius = 5
-        Me.btnGasMixing1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnGasMixing1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnGasMixing1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGasMixing1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnGasMixing1.FillColor = System.Drawing.Color.Black
-        Me.btnGasMixing1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGasMixing1.ForeColor = System.Drawing.Color.White
-        Me.btnGasMixing1.Location = New System.Drawing.Point(9, 37)
-        Me.btnGasMixing1.Name = "btnGasMixing1"
-        Me.btnGasMixing1.Size = New System.Drawing.Size(79, 31)
-        Me.btnGasMixing1.TabIndex = 158
-        Me.btnGasMixing1.Text = " Gas Mixing 1"
+        'ViewAlarmHistoryToolStripMenuItem
+        '
+        Me.ViewAlarmHistoryToolStripMenuItem.Image = CType(resources.GetObject("ViewAlarmHistoryToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ViewAlarmHistoryToolStripMenuItem.Name = "ViewAlarmHistoryToolStripMenuItem"
+        Me.ViewAlarmHistoryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ViewAlarmHistoryToolStripMenuItem.Text = "View alarm history"
         '
         'WIA_Layout_Form
         '
@@ -1638,6 +1646,13 @@ Partial Class WIA_Layout_Form
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "WIA_Layout_Form"
         Me.Text = "`"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.Guna2GroupBox2.ResumeLayout(False)
+        Me.Guna2GroupBox3.ResumeLayout(False)
+        Me.Guna2GroupBox4.ResumeLayout(False)
+        Me.Guna2GroupBox5.ResumeLayout(False)
+        Me.Guna2GroupBox6.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1646,13 +1661,6 @@ Partial Class WIA_Layout_Form
         CType(Me.Guna2CirclePictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.Guna2GroupBox2.ResumeLayout(False)
-        Me.Guna2GroupBox3.ResumeLayout(False)
-        Me.Guna2GroupBox4.ResumeLayout(False)
-        Me.Guna2GroupBox5.ResumeLayout(False)
-        Me.Guna2GroupBox6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1746,4 +1754,5 @@ Partial Class WIA_Layout_Form
     Friend WithEvents Guna2GroupBox6 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents btnGasMixing4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnGasMixing1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ViewAlarmHistoryToolStripMenuItem As ToolStripMenuItem
 End Class

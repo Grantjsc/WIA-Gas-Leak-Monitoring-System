@@ -213,4 +213,292 @@ Module Query_Module
             Application.ExitThread()
         End Try
     End Sub
+
+    Sub Save_AlarmHistory()
+        Dim mycommand As String
+
+        Dim Gt_Number As Integer = D70
+        Dim Val As String = D71
+        Dim DT As String = D73 & "/" & D74 & "/" & D72 & " " & D75 & ":" & D76
+        Dim AlarmType As String = D77
+
+        Dim Loc As String
+
+        Select Case Gt_Number
+            Case 1
+                Loc = "Selas 01: Upper"
+            Case 2
+                Loc = "Selas 01: Middle"
+            Case 3
+                Loc = "Selas 01: Lower"
+            Case 4
+                Loc = "Selas 02: Upper"
+            Case 5
+                Loc = "Selas 02: Middle"
+            Case 6
+                Loc = "Selas 02: Lower"
+            Case 7
+                Loc = "Selas 03: Upper"
+            Case 8
+                Loc = "Selas 03: Middle"
+            Case 9
+                Loc = "Selas 03: Lower"
+            Case 10
+                Loc = "Selas 04: Upper"
+            Case 11
+                Loc = "Selas 04: Middle"
+            Case 12
+                Loc = "Selas 04: Lower"
+            Case 13
+                Loc = "Selas 05: Upper"
+            Case 14
+                Loc = "Selas 05: Middle"
+            Case 15
+                Loc = "Selas 05: Lower"
+            Case 16
+                Loc = "Selas 06: Upper"
+            Case 17
+                Loc = "Selas 06: Middle"
+            Case 18
+                Loc = "Selas 06: Lower"
+            Case 19
+                Loc = "Selas 07: Upper"
+            Case 20
+                Loc = "Selas 07: Middle"
+            Case 21
+                Loc = "Selas 07: Lower"
+            Case 22
+                Loc = "Selas 08: Upper"
+            Case 23
+                Loc = "Selas 08: Middle"
+            Case 24
+                Loc = "Selas 08: Lower"
+            Case 25
+                Loc = "Selas 09: Upper"
+            Case 26
+                Loc = "Selas 09: Middle"
+            Case 27
+                Loc = "Selas 09: Lower"
+            Case 28
+                Loc = "Selas 10: Upper"
+            Case 29
+                Loc = "Selas 10: Middle"
+            Case 30
+                Loc = "Selas 10: Lower"
+            Case 31
+                Loc = "Selas 11: Upper"
+            Case 32
+                Loc = "Selas 11: Middle"
+            Case 33
+                Loc = "Selas 11: Lower"
+            Case 34
+                Loc = "Selas 12: Upper"
+            Case 35
+                Loc = "Selas 12: Middle"
+            Case 36
+                Loc = "Selas 12: Lower"
+            Case 37
+                Loc = "Selas 13: Upper"
+            Case 38
+                Loc = "Selas 13: Middle"
+            Case 39
+                Loc = "Selas 13: Lower"
+            Case 40
+                Loc = "Warehouse: Trench 01"
+            Case 41
+                Loc = "Warehouse: Trench 02"
+            Case 42
+                Loc = "PICO to NANO: Trench 03"
+            Case 43
+                Loc = "PICO to NANO: Trench 04"
+            Case 44
+                Loc = "PICO to NANO: Trench 05"
+            Case 45
+                Loc = "PICO to NANO: Trench 06"
+            Case 46
+                Loc = "PICO to NANO: Trench 07"
+            Case 47
+                Loc = "PICO to NANO: Trench 08"
+            Case 48
+                Loc = "PICO to NANO: Trench 09"
+            Case 49
+                Loc = "PICO to NANO: Trench 10"
+            Case 50
+                Loc = "PICO: Trench 11"
+            Case 51
+                Loc = "PICO: Trench 12"
+            Case 52
+                Loc = "PICO: Trench 13"
+            Case 53
+                Loc = "PICO: Trench 14"
+            Case 54
+                Loc = "PICO: Trench 15"
+            Case 55
+                Loc = "PICO: Trench 16"
+            Case 56
+                Loc = "PICO: Trench 17"
+            Case 57
+                Loc = "PICO: Trench 18"
+            Case 58
+                Loc = "PICO: Trench 19"
+            Case 59
+                Loc = "PICO: Trench 20"
+            Case 60
+                Loc = "Gas Mixing: 1"
+            Case 61
+                Loc = "Gas Mixing: 4"
+            Case 9999
+                Loc = "Reset"
+            Case Else
+                Loc = "Unknown Location"
+        End Select
+
+
+        Try
+            ConOpen()
+            mycommand = "INSERT INTO [WIA_GLM_History] ([GT_Number],[Location],[Value],[DateAndTime],[Alarm_Type]) 
+                                VALUES (@gt, @lctn, @val, @DateTime, @type)"
+            Using command As New SqlCommand(mycommand, Dbconnection)
+                command.Parameters.AddWithValue("@gt", Gt_Number)
+                command.Parameters.AddWithValue("@lctn", Loc)
+                command.Parameters.AddWithValue("@val", Val)
+                command.Parameters.AddWithValue("@DateTime", DT)
+                command.Parameters.AddWithValue("@type", AlarmType)
+                command.ExecuteNonQuery()
+            End Using
+            ConClose()
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Sub View_History()
+        Dim command As New SqlCommand("", Dbconnection)
+        Dim table As New DataTable
+
+        ConOpen()
+
+        If Dbconnection.State = ConnectionState.Open Then
+            command.Connection = Dbconnection
+            command.CommandText = "SELECT TOP(50) GT_Number, Location, Value, DateAndTime, Alarm_Type FROM WIA_GLM_History ORDER BY ID DESC"
+
+            Dim rdr As SqlDataReader = command.ExecuteReader
+
+            table.Load(rdr)
+
+            AlarmHistory_Form.DataGridView1.DataSource = table
+
+            ' Bold the header cells
+            For Each column As DataGridViewColumn In AlarmHistory_Form.DataGridView1.Columns
+                column.HeaderCell.Style.Font = New Font("MS Reference Sans Serif", 12, FontStyle.Bold)
+                column.HeaderCell.Style.ForeColor = Color.White
+                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                column.DefaultCellStyle.Font = New Font("MS Reference Sans Serif", 11)
+            Next
+
+            AlarmHistory_Form.DataGridView1.Columns("GT_Number").HeaderText = "Gas Transmitter"
+            AlarmHistory_Form.DataGridView1.Columns("Location").HeaderText = "GT Location"
+            AlarmHistory_Form.DataGridView1.Columns("Value").HeaderText = "Value"
+            AlarmHistory_Form.DataGridView1.Columns("DateAndTime").HeaderText = "Date and Time"
+            AlarmHistory_Form.DataGridView1.Columns("Alarm_Type").HeaderText = "Alarm Type"
+
+            AlarmHistory_Form.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(223, 228, 234)
+            AlarmHistory_Form.DataGridView1.DefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen
+            AlarmHistory_Form.DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White
+            AlarmHistory_Form.DataGridView1.DefaultCellStyle.ForeColor = Color.Black
+
+            AlarmHistory_Form.DataGridView1.EnableHeadersVisualStyles = False
+            AlarmHistory_Form.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SeaGreen
+
+        End If
+        ConClose()
+    End Sub
+
+    Sub UpdateLocation()
+        Try
+            ConOpen()
+
+            Dim query As String = "UPDATE WIA_GLM_History 
+            SET Location = 
+                CASE 
+                    WHEN GT_Number = 1 THEN 'Selas 01: Upper'
+                    WHEN GT_Number = 2 THEN 'Selas 01: Middle'
+                    WHEN GT_Number = 3 THEN 'Selas 01: Lower'
+                    WHEN GT_Number = 4 THEN 'Selas 02: Upper'
+                    WHEN GT_Number = 5 THEN 'Selas 02: Middle'
+                    WHEN GT_Number = 6 THEN 'Selas 02: Lower'
+                    WHEN GT_Number = 7 THEN 'Selas 03: Upper'
+                    WHEN GT_Number = 8 THEN 'Selas 03: Middle'
+                    WHEN GT_Number = 9 THEN 'Selas 03: Lower'
+                    WHEN GT_Number = 10 THEN 'Selas 04: Upper'
+                    WHEN GT_Number = 11 THEN 'Selas 04: Middle'
+                    WHEN GT_Number = 12 THEN 'Selas 04: Lower'
+                    WHEN GT_Number = 13 THEN 'Selas 05: Upper'
+                    WHEN GT_Number = 14 THEN 'Selas 05: Middle'
+                    WHEN GT_Number = 15 THEN 'Selas 05: Lower'
+                    WHEN GT_Number = 16 THEN 'Selas 06: Upper'
+                    WHEN GT_Number = 17 THEN 'Selas 06: Middle'
+                    WHEN GT_Number = 18 THEN 'Selas 06: Lower'
+                    WHEN GT_Number = 19 THEN 'Selas 07: Upper'
+                    WHEN GT_Number = 20 THEN 'Selas 07: Middle'
+                    WHEN GT_Number = 21 THEN 'Selas 07: Lower'
+                    WHEN GT_Number = 22 THEN 'Selas 08: Upper'
+                    WHEN GT_Number = 23 THEN 'Selas 08: Middle'
+                    WHEN GT_Number = 24 THEN 'Selas 08: Lower'
+                    WHEN GT_Number = 25 THEN 'Selas 09: Upper'
+                    WHEN GT_Number = 26 THEN 'Selas 09: Middle'
+                    WHEN GT_Number = 27 THEN 'Selas 09: Lower'
+                    WHEN GT_Number = 28 THEN 'Selas 10: Upper'
+                    WHEN GT_Number = 29 THEN 'Selas 10: Middle'
+                    WHEN GT_Number = 30 THEN 'Selas 10: Lower'
+                    WHEN GT_Number = 31 THEN 'Selas 11: Upper'
+                    WHEN GT_Number = 32 THEN 'Selas 11: Middle'
+                    WHEN GT_Number = 33 THEN 'Selas 11: Lower'
+                    WHEN GT_Number = 34 THEN 'Selas 12: Upper'
+                    WHEN GT_Number = 35 THEN 'Selas 12: Middle'
+                    WHEN GT_Number = 36 THEN 'Selas 12: Lower'
+                    WHEN GT_Number = 37 THEN 'Selas 13: Upper'
+                    WHEN GT_Number = 38 THEN 'Selas 13: Middle'
+                    WHEN GT_Number = 39 THEN 'Selas 13: Lower'
+                    WHEN GT_Number = 40 THEN 'Warehouse: Trench 01'
+                    WHEN GT_Number = 41 THEN 'Warehouse: Trench 02'
+                    WHEN GT_Number = 42 THEN 'PICO to NANO: Trench 03'
+                    WHEN GT_Number = 43 THEN 'PICO to NANO: Trench 04'
+                    WHEN GT_Number = 44 THEN 'PICO to NANO: Trench 05'
+                    WHEN GT_Number = 45 THEN 'PICO to NANO: Trench 06'
+                    WHEN GT_Number = 46 THEN 'PICO to NANO: Trench 07'
+                    WHEN GT_Number = 47 THEN 'PICO to NANO: Trench 08'
+                    WHEN GT_Number = 48 THEN 'PICO to NANO: Trench 09'
+                    WHEN GT_Number = 49 THEN 'PICO to NANO: Trench 10'
+                    WHEN GT_Number = 50 THEN 'PICO: Trench 11'
+                    WHEN GT_Number = 51 THEN 'PICO: Trench 12'
+                    WHEN GT_Number = 52 THEN 'PICO: Trench 13'
+                    WHEN GT_Number = 53 THEN 'PICO: Trench 14'
+                    WHEN GT_Number = 54 THEN 'PICO: Trench 15'
+                    WHEN GT_Number = 55 THEN 'PICO: Trench 16'
+                    WHEN GT_Number = 56 THEN 'PICO: Trench 17'
+                    WHEN GT_Number = 57 THEN 'PICO: Trench 18'
+                    WHEN GT_Number = 58 THEN 'PICO: Trench 19'
+                    WHEN GT_Number = 59 THEN 'PICO: Trench 20'
+                    WHEN GT_Number = 60 THEN 'Gas Mixing: 1'
+                    WHEN GT_Number = 61 THEN 'Gas Mixing: 4'
+                    WHEN GT_Number = 9999 THEN 'Reset'
+                    ELSE 'Unknown Location'
+                END"
+
+            Dim cmd As New SqlCommand(query, Dbconnection)
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+            MessageBox.Show(rowsAffected.ToString() & " rows updated.", "Update Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            ConClose()
+        End Try
+    End Sub
+
+
+
 End Module

@@ -25,6 +25,7 @@ Partial Class Design2_Form
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Design2_Form))
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnFill = New System.Windows.Forms.Button()
         Me.btnSMS_Test = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnEmail_Test = New System.Windows.Forms.Button()
@@ -46,6 +47,7 @@ Partial Class Design2_Form
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.TimerSaveDb = New System.Windows.Forms.Timer(Me.components)
         Me.TimerMessages = New System.Windows.Forms.Timer(Me.components)
+        Me.lblConMess = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
@@ -56,6 +58,7 @@ Partial Class Design2_Form
         '
         Me.Panel3.BackColor = System.Drawing.Color.SeaGreen
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.btnFill)
         Me.Panel3.Controls.Add(Me.btnSMS_Test)
         Me.Panel3.Controls.Add(Me.btnReset)
         Me.Panel3.Controls.Add(Me.btnEmail_Test)
@@ -66,6 +69,17 @@ Partial Class Design2_Form
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1200, 72)
         Me.Panel3.TabIndex = 129
+        '
+        'btnFill
+        '
+        Me.btnFill.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnFill.Location = New System.Drawing.Point(938, 26)
+        Me.btnFill.Name = "btnFill"
+        Me.btnFill.Size = New System.Drawing.Size(75, 23)
+        Me.btnFill.TabIndex = 132
+        Me.btnFill.Text = "Fill Loc"
+        Me.btnFill.UseVisualStyleBackColor = True
+        Me.btnFill.Visible = False
         '
         'btnSMS_Test
         '
@@ -127,6 +141,7 @@ Partial Class Design2_Form
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.Control
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel4.Controls.Add(Me.lblConMess)
         Me.Panel4.Controls.Add(Me.lblDateTime)
         Me.Panel4.Controls.Add(Me.lblfooter2)
         Me.Panel4.Controls.Add(Me.lblfooter1)
@@ -237,7 +252,7 @@ Partial Class Design2_Form
         '
         'Timer_ReadOmron
         '
-        Me.Timer_ReadOmron.Interval = 1000
+        Me.Timer_ReadOmron.Interval = 2000
         '
         'TimerSaveDb
         '
@@ -246,6 +261,19 @@ Partial Class Design2_Form
         'TimerMessages
         '
         Me.TimerMessages.Interval = 1000
+        '
+        'lblConMess
+        '
+        Me.lblConMess.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblConMess.BackColor = System.Drawing.Color.Transparent
+        Me.lblConMess.Font = New System.Drawing.Font("Nirmala UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConMess.ForeColor = System.Drawing.Color.Green
+        Me.lblConMess.Location = New System.Drawing.Point(151, 7)
+        Me.lblConMess.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblConMess.Name = "lblConMess"
+        Me.lblConMess.Size = New System.Drawing.Size(296, 17)
+        Me.lblConMess.TabIndex = 131
+        Me.lblConMess.Text = "Connection Message"
         '
         'Design2_Form
         '
@@ -292,4 +320,6 @@ Partial Class Design2_Form
     Friend WithEvents TimerMessages As Timer
     Friend WithEvents EditMessageReceipientToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MessageRecipientToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnFill As Button
+    Friend WithEvents lblConMess As Label
 End Class

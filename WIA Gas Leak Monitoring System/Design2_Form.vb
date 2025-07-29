@@ -107,9 +107,14 @@
         Else
             'Get_Details()
 
-            SMS_Warning()
             Send_Email()
+
+            ReadSave_Alarm() ' read alarm
+
+            SMS_Warning()
+
             'Console.WriteLine("At least one alarm is True.")
+
         End If
     End Sub
 
@@ -145,8 +150,8 @@
 
             If GasLeak_Loc.Count > 0 Then
                 'Console.WriteLine("The ArrayList has values.")
-                SMS_NoLeak()
-                Send_Email_NoLeak()
+                'SMS_NoLeak()
+                'Send_Email_NoLeak()
 
                 GasLeak_Loc.Clear()
 
@@ -158,11 +163,15 @@
         Else
             'Get_Details()
 
-            SMS_Warning()
             Send_Email()
+            SMS_Warning()
+
+            ReadSave_Alarm()
             'Console.WriteLine("At least one alarm is True.")
         End If
     End Sub
 
-
+    Private Sub btnFill_Click(sender As Object, e As EventArgs) Handles btnFill.Click
+        UpdateLocation()
+    End Sub
 End Class

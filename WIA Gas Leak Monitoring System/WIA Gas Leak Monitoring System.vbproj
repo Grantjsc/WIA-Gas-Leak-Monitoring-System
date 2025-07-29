@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>WIA Gas Leak Monitoring System</ProductName>
     <PublisherName>Littelfuse Philippines %28TSG%29 - GCatapang</PublisherName>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -164,6 +164,12 @@
     <Compile Include="Add_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AlarmHistory_Form.Designer.vb">
+      <DependentUpon>AlarmHistory_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmHistory_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Change_COM_IP_Form.Designer.vb">
       <DependentUpon>Change_COM_IP_Form.vb</DependentUpon>
     </Compile>
@@ -182,6 +188,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading_Form.Designer.vb">
+      <DependentUpon>Loading_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loading_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master_login.Designer.vb">
@@ -247,6 +259,9 @@
     <EmbeddedResource Include="Add_Form.resx">
       <DependentUpon>Add_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlarmHistory_Form.resx">
+      <DependentUpon>AlarmHistory_Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Change_COM_IP_Form.resx">
       <DependentUpon>Change_COM_IP_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading_Form.resx">
+      <DependentUpon>Loading_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master_login.resx">
       <DependentUpon>Master_login.vb</DependentUpon>

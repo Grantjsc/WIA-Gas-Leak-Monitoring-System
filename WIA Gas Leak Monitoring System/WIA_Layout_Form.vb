@@ -644,4 +644,8 @@
 
         ShowSenVal_Form.ShowDialog()
     End Sub
+
+    Private Sub ViewAlarmHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewAlarmHistoryToolStripMenuItem.Click
+        Load_AlarmHistory()
+    End Sub
 End Class

@@ -21,8 +21,12 @@ Module Read_OMRON_PLC_Module
         Dim connectResult = Form1.omronPLC.ConnectServer()
         If connectResult.IsSuccess Then
             Console.WriteLine("Connected to Omron NX102-9020 PLC successfully!")
+            Design2_Form.lblConMess.Text = "Connected to Omron NX102-9020 PLC."
+
+            ReadSave_Alarm() ' read alarm
+
             Design2_Form.Timer_ReadOmron.Enabled = True
-            Design2_Form.TimerSaveDb.Enabled = True
+            Design2_Form.TimerSaveDb.Enabled = True ' updating data database for power BI
 
         Else
             'MsgBox("Failed to connect to PLC: " & connectResult.Message)
@@ -678,6 +682,133 @@ Module Read_OMRON_PLC_Module
 
     Sub Reset_Btn()
         Dim writeResult = Form1.omronPLC.Write("C0.03", True)
+    End Sub
+
+
+    '===========================< Reading the Log Alarm >========================
+
+
+    Public D70 As Integer
+    Public D71 As Decimal
+    Public D72 As String
+    Public D73 As String
+    Public D74 As String
+    Public D75 As String
+    Public D76 As String
+    Public D77 As Integer
+
+    Sub Read_D70()
+        Dim readResult = Form1.omronPLC.ReadInt16("D70")
+        If readResult.IsSuccess Then
+            D70 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D71()
+        Dim readResult = Form1.omronPLC.ReadInt16("D71")
+        If readResult.IsSuccess Then
+            D71 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D72()
+        Dim readResult = Form1.omronPLC.ReadInt16("D72")
+        If readResult.IsSuccess Then
+            D72 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D73()
+        Dim readResult = Form1.omronPLC.ReadInt16("D73")
+        If readResult.IsSuccess Then
+            D73 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D74()
+        Dim readResult = Form1.omronPLC.ReadInt16("D74")
+        If readResult.IsSuccess Then
+            D74 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D75()
+        Dim readResult = Form1.omronPLC.ReadInt16("D75")
+        If readResult.IsSuccess Then
+            D75 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D76()
+        Dim readResult = Form1.omronPLC.ReadInt16("D76")
+        If readResult.IsSuccess Then
+            D76 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_D77()
+        Dim readResult = Form1.omronPLC.ReadInt16("D77")
+        If readResult.IsSuccess Then
+            D77 = readResult.Content
+        End If
+    End Sub
+
+    Sub Read_LogValue()
+        Read_D70()
+        Read_D71()
+        Read_D72()
+        Read_D73()
+        Read_D74()
+        Read_D75()
+        Read_D76()
+        Read_D77()
+    End Sub
+
+
+    Sub ReadSave_Alarm()
+        'ShowSaving_Message()
+        'Thread.Sleep(1000)
+        For i As Integer = 1 To 10000
+
+            Dim writeResult = Form1.omronPLC.Write("D66", i)  ' Write the value to D66
+
+            If writeResult.IsSuccess Then
+                Dim readResult = Form1.omronPLC.ReadInt16("D66") ' Read Data Memory D66
+
+                If readResult.IsSuccess Then
+                    Dim LogNum As Integer = readResult.Content ' Read the actual value
+
+                    Console.WriteLine("Read Attempt " & i.ToString() & ": D66 Value = " & LogNum.ToString())
+
+                    Dim C02writeResult = Form1.omronPLC.Write("C0.02", True) 'Check error log
+                    'Thread.Sleep(10)
+                    Read_LogValue()
+
+                    Console.WriteLine("D70: " & D70 & vbNewLine &
+                              "D71: " & D71 & vbNewLine &
+                              "D72: " & D72 & vbNewLine &
+                              "D73: " & D73 & vbNewLine &
+                              "D74: " & D74 & vbNewLine &
+                              "D75: " & D75 & vbNewLine &
+                              "D76: " & D76 & vbNewLine &
+                              "D77: " & D77 & vbNewLine)
+
+                    If D70 = 0 Then
+                        Dim ResetHistory_Log = Form1.omronPLC.Write("C0.03", True) 'Reset History Log
+                        'MsgBox("Done reading Alarm Log")
+                        Loading_Form.Close()
+                        Exit For
+                    Else
+                        Save_AlarmHistory()
+                    End If
+
+                Else
+                    Console.WriteLine("Failed to read D66 on attempt " & i.ToString())
+                End If
+            End If
+
+
+        Next
     End Sub
 
 End Module
@@ -3867,6 +3998,8 @@ Module Function_Module
 
     Sub ShowAllSensors()
         WIA_Layout_Form.Close()
+        AlarmHistory_Form.Close()
+
         With Sensors_Form
             .TopLevel = False
             Design2_Form.PanelMaster.Controls.Add(Sensors_Form)
@@ -3875,7 +4008,10 @@ Module Function_Module
             .Show()
         End With
     End Sub
+
     Sub ShowLayout()
+        AlarmHistory_Form.Close()
+
         With WIA_Layout_Form
             .TopLevel = False
             Design2_Form.PanelMaster.Controls.Add(WIA_Layout_Form)
@@ -3923,6 +4059,26 @@ Module Function_Module
 
     Public Update_MessAndDelay As Boolean
 
+    Sub ShowSaving_Message()
+        With Loading_Form
+            .TopLevel = False
+            Design2_Form.PanelMaster.Controls.Add(Loading_Form)
+            .WindowState = FormWindowState.Maximized
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Sub Load_AlarmHistory()
+        With AlarmHistory_Form
+            .TopLevel = False
+            Design2_Form.PanelMaster.Controls.Add(AlarmHistory_Form)
+            .WindowState = FormWindowState.Maximized
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
 End Module
 
 Module SMS_Module
@@ -3957,7 +4113,7 @@ Module SMS_Module
     Public message_Tosend As String
     Public Sub SMS_Warning()
 
-        Get_Details()
+        'Get_Details()
 
         'Dim Reciever As String = "09393998531;09089555589;09991904845"
 
@@ -4004,7 +4160,7 @@ Module SMS_Module
 
                 ' Send Ctrl+Z to submit the message
                 Design2_Form.SerialPort1.Write(Chr(26)) ' Ctrl+Z character
-                Thread.Sleep(2000) ' Wait for the SMS to be sent
+                Thread.Sleep(1000) ' Wait for the SMS to be sent
 
                 ' Get the response from the modem
                 Dim response As String = Design2_Form.SerialPort1.ReadExisting()
@@ -4018,7 +4174,7 @@ Module SMS_Module
                     Console.WriteLine("ERROR Message Sent")
                 End If
 
-                Thread.Sleep(3000) ' Optional: Add delay between messages to avoid network issues
+                Thread.Sleep(1000) ' Optional: Add delay between messages to avoid network issues
             Next
 
             'Array.Clear(GL_Loc, 0, GL_Loc.Length)
@@ -4106,6 +4262,8 @@ Module Email_Module
     Public Email As MailMessage
 
     Sub Send_Email()
+
+        Get_Details()
 
         Dim GL_Loc As String() = GasLeak_Loc.ToArray()
         Dim Location_List As String = String.Join("<br>", GL_Loc)
